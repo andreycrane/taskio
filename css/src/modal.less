@@ -1,0 +1,51 @@
+@brd-radius: 5px;
+
+.pure-modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 99999;
+    
+    &.hide {
+        display: none;
+    }
+    
+    .modal-container {
+        border-radius: @brd-radius;
+        display: block;
+        top: 45%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        width: 600px !important;
+        margin: 0 auto;
+        position: fixed;
+        height: auto;
+        background-color: white; 
+        
+        .modal-header, .modal-footer {
+            width: 600px;
+            height: 30px;
+            background-color: #e86a32;
+        }
+        
+        .modal-header {
+            border-radius: @brd-radius @brd-radius 0 0;
+        }
+        
+        .modal-footer {
+             border-radius: 0 0 @brd-radius @brd-radius;
+        }
+        
+        .modal-content {
+            padding: 0 10px;
+            
+            button {
+                float: right;
+                margin-left: 5px;
+            }
+        }
+    }
+}

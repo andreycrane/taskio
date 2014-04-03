@@ -1,3 +1,4 @@
 taskio.komodoproject
 .komodotools
 node_modules
+.idea
