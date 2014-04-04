@@ -3,9 +3,10 @@ var TaskModel = (function(Backbone) {
     
     var TaskModel = Backbone.Model.extend({
         defaults: {
+            "project_id": null,
             "done": false,
             "name": "No name",
-            "text": "Description of task here..."
+            "description": "Description of task here..."
         }
     });
     
