@@ -1,7 +1,9 @@
 var HomeView = (function(Backbone,
+                         _,
                          ProjectsCollection,
                          ProjectView,
                          TasksCollection,
+                         TaskView,
                          load_template) {
     "use strict";
     
@@ -27,11 +29,16 @@ var HomeView = (function(Backbone,
         
         initialize: function() {
             this.projects = new ProjectsCollection();
-            this.tasks = new TasksCollection({ aync: false });
+            this.tasks = new TasksCollection();
             this.projects.fetch({ async: false });
+            this.tasks.fetch({ async: false });
+            // объект медиатора для взаимодейтсвия и прослушивания
+            // между объектами видов
+            this.mediator = _.extend(Backbone.Events);
             
             this.listenTo(this.projects, "add", this.addProject);
             this.listenTo(this.tasks, "add", this.addTask);
+            this.listenTo(this.mediator, "prj_selected", this.prj_selected);
         },
         
         render: function() {
@@ -39,6 +46,7 @@ var HomeView = (function(Backbone,
             this.$el.append(this.project_modal);
             this.$el.append(this.task_modal);
             this.projects.forEach(this.addProject.bind(this));
+            this.tasks.forEach(this.addTask.bind(this));
             
             return this;
         },
@@ -83,7 +91,7 @@ var HomeView = (function(Backbone,
             
             name = this.$("#task_name").val();
             description = this.$("#description").val();
-            done = this.$("#description").val();
+            done = this.$("#done").is(":checked");
             
             this.tasks.create({
                 project_id: this.current_project,
@@ -94,16 +102,29 @@ var HomeView = (function(Backbone,
         },
         
         addProject: function(model) {
-            var view = new ProjectView({ model: model });
+            var view = new ProjectView({
+                model: model,
+                mediator: this.mediator
+            });
             this.$("#projects_list").append(view.render().$el);
         },
         
-        addTask: function(model) { console.log(model); }
+        addTask: function(model) {
+            var view = new TaskView({ model: model });
+            this.$("#tasks_container").append(view.render().$el);
+        },
+        
+        prj_selected: function(event) {
+            var model = event.model;
+            this.current_project = model.id;
+        }
     });
     
     return HomeView;
 }(Backbone,
+  _,
   ProjectsCollection,
   ProjectView,
   TasksCollection,
+  TaskView,
   load_template));

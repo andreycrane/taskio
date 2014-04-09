@@ -8,12 +8,14 @@ var ProjectView = (function(Backbone) {
         tagName: "li",
         
         events: {
-            "click .project_item": "deleteProj"
+            "click .project_item span": "deleteProj",
+            "click .project_item": "selected"
         },
         
         initialize: function(options) {
             options = options || {};
             this.model = options.model;
+            this.mediator = options.mediator;
         },
         
         render: function() {
@@ -30,6 +32,12 @@ var ProjectView = (function(Backbone) {
         deleteProj: function() {
             this.model.destroy();
             this.remove();
+        },
+        
+        selected: function() {
+            this.mediator.trigger("prj_selected", {
+                model: this.model
+            });
         }
     });
 }(Backbone, load_template));

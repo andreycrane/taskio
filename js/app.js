@@ -6,7 +6,4 @@ $(function (){
     });
     
     app.home();
-    
-    // horde = gremlins.createHorde()
-    // horde.unleash();
 });
