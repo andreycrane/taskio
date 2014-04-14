@@ -16,6 +16,8 @@ var ProjectView = (function(Backbone) {
             options = options || {};
             this.model = options.model;
             this.mediator = options.mediator;
+            
+            this.listenTo(this.mediator, "prj_selected", this.prj_selected);
         },
         
         render: function() {
@@ -38,6 +40,14 @@ var ProjectView = (function(Backbone) {
             this.mediator.trigger("prj_selected", {
                 model: this.model
             });
+        },
+        
+        prj_selected: function(event) {
+            if (this.model === event.model) {
+                this.$el.addClass("pure-menu-selected");
+            } else {
+                this.$el.removeClass("pure-menu-selected");
+            }
         }
     });
 }(Backbone, load_template));

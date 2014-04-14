@@ -14,9 +14,12 @@ var TaskView = (function(Backbone,
             "click #delete_task": "deleteTask"
         },
         
-        initalize: function(options) {
+        initialize: function(options) {
             options = options || {};
             this.model = options.model;
+            this.mediator = options.mediator;
+            
+            this.listenTo(this.mediator, "prj_selected", this.prj_selected);
         },
         
         render: function() {
@@ -32,6 +35,17 @@ var TaskView = (function(Backbone,
         deleteTask: function() {
             this.model.destroy();
             this.remove();
+        },
+        
+        prj_selected: function(event) {
+            var project = event.model;
+            
+            if (project === null ||
+                project.id === this.model.get("project_id")) {
+                this.$el.fadeIn("fast");
+            } else {
+                this.$el.fadeOut("fast");
+            }
         }
     });
 })(Backbone,

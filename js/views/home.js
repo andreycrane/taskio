@@ -24,7 +24,8 @@ var HomeView = (function(Backbone,
             "click #prj_modal_close": "prj_modal_close",
             "click #task_modal_close": "task_modal_close",
             "click #prj_modal_save": "prj_modal_save",
-            "click #task_modal_save": "task_modal_save"
+            "click #task_modal_save": "task_modal_save",
+            "click #all_tasks": "all_tasks"
         },
         
         initialize: function() {
@@ -110,13 +111,20 @@ var HomeView = (function(Backbone,
         },
         
         addTask: function(model) {
-            var view = new TaskView({ model: model });
+            var view = new TaskView({
+                model: model,
+                mediator: this.mediator
+            });
+            
             this.$("#tasks_container").append(view.render().$el);
         },
         
         prj_selected: function(event) {
-            var model = event.model;
-            this.current_project = model.id;
+            this.current_project = (event.model === null) ? null : event.model.id;
+        },
+        
+        all_tasks: function() {
+            this.mediator.trigger("prj_selected", { model: null });
         }
     });
     
