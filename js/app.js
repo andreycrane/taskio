@@ -1,5 +1,5 @@
 $(function (){
-    var app, horde;
+    var app;
     
     app = new ApplicationView({
         el: $("#perspective")

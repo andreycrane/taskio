@@ -10,6 +10,10 @@ var TaskView = (function(Backbone,
         className: "task",
         task_template: _.template(load_template("task")),
         
+        events: {
+            "click #delete_task": "deleteTask"
+        },
+        
         initalize: function(options) {
             options = options || {};
             this.model = options.model;
@@ -23,6 +27,11 @@ var TaskView = (function(Backbone,
             }));
             
             return this;
+        },
+        
+        deleteTask: function() {
+            this.model.destroy();
+            this.remove();
         }
     });
 })(Backbone,
