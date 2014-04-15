@@ -8,7 +8,7 @@ var ProjectView = (function(Backbone) {
         tagName: "li",
         
         events: {
-            "click .project_item span": "deleteProj",
+            "click .project_item span": "delProjModal",
             "click .project_item": "selected"
         },
         
@@ -18,6 +18,7 @@ var ProjectView = (function(Backbone) {
             this.mediator = options.mediator;
             
             this.listenTo(this.mediator, "prj_selected", this.prj_selected);
+            this.on("deleteProj", this.deleteProj);
         },
         
         render: function() {
@@ -31,12 +32,29 @@ var ProjectView = (function(Backbone) {
             return this;
         },
         
-        deleteProj: function() {
+        delProjModal: function(event) {
+            event.stopPropagation();
+            this.mediator.trigger("del_proj_modal", { view: this });
+        },
+        
+        deleteProj: function(event) {
+            var tasks = event.collection,
+                projectTasks,
+                that = this;
+            
+            projectTasks = tasks.filter(function(task) {
+                return task.get("project_id") === that.model.id;
+            });
+            
+            projectTasks.forEach(function(task) {
+                task.destroy();
+            });
+            
             this.model.destroy();
             this.remove();
         },
         
-        selected: function() {
+        selected: function(event) {
             this.mediator.trigger("prj_selected", {
                 model: this.model
             });

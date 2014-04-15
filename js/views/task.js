@@ -20,6 +20,7 @@ var TaskView = (function(Backbone,
             this.mediator = options.mediator;
             
             this.listenTo(this.mediator, "prj_selected", this.prj_selected);
+            this.listenTo(this.model, "destroy", this.task_destroy);
         },
         
         render: function() {
@@ -46,7 +47,9 @@ var TaskView = (function(Backbone,
             } else {
                 this.$el.fadeOut("fast");
             }
-        }
+        },
+        
+        task_destroy: function() { this.remove(); }
     });
 })(Backbone,
    _,

@@ -13,6 +13,7 @@ var HomeView = (function(Backbone,
         home_template: load_template("home_template"),
         project_modal: load_template("new_project_modal"),
         task_modal: load_template("new_task_modal"),
+        prj_del_modal: load_template("delete_project_modal"),
         
         current_project: null,
         
@@ -23,8 +24,10 @@ var HomeView = (function(Backbone,
             "keyup #task_modal": "modal_escape",
             "click #prj_modal_close": "prj_modal_close",
             "click #task_modal_close": "task_modal_close",
+            "click #prj_del_close": "prj_del_close",
             "click #prj_modal_save": "prj_modal_save",
             "click #task_modal_save": "task_modal_save",
+            "click #prj_btn_delete": "prj_btn_delete",
             "click #all_tasks": "all_tasks"
         },
         
@@ -40,12 +43,14 @@ var HomeView = (function(Backbone,
             this.listenTo(this.projects, "add", this.addProject);
             this.listenTo(this.tasks, "add", this.addTask);
             this.listenTo(this.mediator, "prj_selected", this.prj_selected);
+            this.listenTo(this.mediator, "del_proj_modal", this.del_proj_modal);
         },
         
         render: function() {
             this.$el.append(this.home_template);
             this.$el.append(this.project_modal);
             this.$el.append(this.task_modal);
+            this.$el.append(this.prj_del_modal);
             this.projects.forEach(this.addProject.bind(this));
             this.tasks.forEach(this.addTask.bind(this));
             
@@ -74,6 +79,7 @@ var HomeView = (function(Backbone,
         
         prj_modal_close: function() { this.$("#project_modal").addClass("hide"); },
         task_modal_close: function() { this.$("#task_modal").addClass("hide"); },
+        prj_del_close: function() { this.$("#prj_del_modal").addClass("hide"); }, 
         
         prj_modal_save: function() {
             var name;
@@ -125,6 +131,17 @@ var HomeView = (function(Backbone,
         
         all_tasks: function() {
             this.mediator.trigger("prj_selected", { model: null });
+        },
+        
+        del_proj_modal: function(event) {
+            this.delProjectView = event.view;
+            this.$("#prj_del_modal").removeClass("hide");
+        },
+        
+        prj_btn_delete: function() {
+            this.delProjectView &&
+                this.delProjectView.trigger("deleteProj", { collection: this.tasks });
+            this.$("#prj_del_modal").addClass("hide");
         }
     });
     
