@@ -1,3 +1,11 @@
-<h6><input type="checkbox" <%= done %> >&nbsp;<%= name %></h6>
-<p><%= description %></p>
+<h6>
+    <input id="t_done" disabled="disabled" type="checkbox" <%= done %> />&nbsp;
+    <span id="t_name"><%= name %></span>
+</h6>
+<p id="t_description">
+    <%= description %>
+</p>
 <button id="delete_task">Удалить</button>
+<button id="edit_task">Изменить</button>
+<button id="save_task" style="display: none;">Сохранить</button>
+<button id="close_edit" style="display: none;">Отмена</button>

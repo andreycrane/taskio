@@ -11,7 +11,10 @@ var TaskView = (function(Backbone,
         task_template: _.template(load_template("task")),
         
         events: {
-            "click #delete_task": "deleteTask"
+            "click #delete_task": "deleteTask",
+            "click #edit_task": "editTask",
+            "click #save_task": "saveTask",
+            "click #close_edit": "closeEdit"
         },
         
         initialize: function(options) {
@@ -36,6 +39,77 @@ var TaskView = (function(Backbone,
         deleteTask: function() {
             this.model.destroy();
             this.remove();
+        },
+        
+        editTask: function() {
+            var taskName_el,
+                taskDescription_el,
+                taskDone_el,
+                name_input,
+                descr_textarea;
+            
+            taskDone_el = this.$("#t_done");
+            taskName_el = this.$("#t_name");
+            taskDescription_el = this.$("#t_description");
+            
+            name_input = [
+                "<input id='t_name' type='text' ",
+                "value='",
+                taskName_el.html(),
+                "' />"
+            ].join("");
+            
+            descr_textarea = [
+                "<textarea id='t_description'>",
+                taskName_el.html(),
+                "</textarea>"
+            ].join("");
+            
+            taskDone_el.attr("disabled", false);
+            taskName_el.replaceWith(name_input);
+            taskDescription_el.replaceWith(descr_textarea);
+            
+            this.$("#save_task, #close_edit").show();
+        },
+        
+        saveTask: function() {
+            this.model.save({
+                "name": this.$("#t_name").val(),
+                "description":  this.$("#t_description").val(),
+                "done": this.$("#t_done").is(':checked')
+            });
+            
+            this.closeEdit();
+        },
+        
+        closeEdit: function() {
+            var taskDone_el,
+                taskName_el,
+                taskDescription_el,
+                name_span,
+                description_p;
+            
+            taskDone_el = this.$("#t_done");
+            taskName_el = this.$("#t_name");
+            taskDescription_el = this.$("#t_description");
+            
+            name_span = [
+                "<span id='t_name'>",
+                this.model.get("name"),
+                "</span>"
+            ].join("");
+            
+            description_p = [
+                "<p id='t_description'>",
+                this.model.get("description"),
+                "</p>"
+            ].join("");
+            
+            taskDone_el.attr("disabled", true);
+            taskName_el.replaceWith(name_span);
+            taskDescription_el.replaceWith(description_p);
+            
+            this.$("#save_task, #close_edit").hide();
         },
         
         prj_selected: function(event) {
