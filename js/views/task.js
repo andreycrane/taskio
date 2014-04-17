@@ -102,8 +102,6 @@ var TaskView = (function(Backbone,
         },
         
         saveTask: function() {
-            console.log(this.$("#t_project").val());
-            
             this.project = this.projects.get(this.$("#t_project").val());
             
             this.model.save({
