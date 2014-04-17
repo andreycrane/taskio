@@ -1,3 +1,8 @@
+<div>
+    <span id="t_project"><%= project %></span>
+    <button id="delete_task">Удалить</button>
+    <button id="edit_task">Изменить</button>
+</div>
 <h6>
     <input id="t_done" disabled="disabled" type="checkbox" <%= done %> />&nbsp;
     <span id="t_name"><%= name %></span>
@@ -5,7 +10,5 @@
 <p id="t_description">
     <%= description %>
 </p>
-<button id="delete_task">Удалить</button>
-<button id="edit_task">Изменить</button>
 <button id="save_task" style="display: none;">Сохранить</button>
 <button id="close_edit" style="display: none;">Отмена</button>

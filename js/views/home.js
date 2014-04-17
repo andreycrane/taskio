@@ -119,6 +119,7 @@ var HomeView = (function(Backbone,
         addTask: function(model) {
             var view = new TaskView({
                 model: model,
+                projects: this.projects,
                 mediator: this.mediator
             });
             
