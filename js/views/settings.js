@@ -1,4 +1,7 @@
-var SettingsView = (function(Backbone, load_template) {
+var SettingsView = (function(Backbone,
+                             _,
+                             ProjectsCollection,
+                             load_template) {
     "use strict";
     
     var SettingsView = Backbone.View.extend({
@@ -14,4 +17,7 @@ var SettingsView = (function(Backbone, load_template) {
     });
     
     return SettingsView;
-} (Backbone, load_template));
+} (Backbone,
+   _,
+   ProjectsCollection,
+   load_template));

@@ -14,19 +14,20 @@ var HomeView = (function(Backbone,
         project_modal: load_template("new_project_modal"),
         task_modal: load_template("new_task_modal"),
         prj_del_modal: load_template("delete_project_modal"),
+        ed_project_modal: load_template("edit_project_modal"),
         
         current_project: null,
         
         events: {
             "click #new_project": "new_project",
             "click #new_task": "new_task",
-            "keyup #project_modal": "modal_escape",
-            "keyup #task_modal": "modal_escape",
             "click #prj_modal_close": "prj_modal_close",
             "click #task_modal_close": "task_modal_close",
             "click #prj_del_close": "prj_del_close",
+            "click #eprj_modal_close": "eprj_modal_close",
             "click #prj_modal_save": "prj_modal_save",
             "click #task_modal_save": "task_modal_save",
+            "click #eprj_modal_save": "eprj_modal_save",
             "click #prj_btn_delete": "prj_btn_delete",
             "click #all_tasks": "all_tasks"
         },
@@ -44,6 +45,7 @@ var HomeView = (function(Backbone,
             this.listenTo(this.tasks, "add", this.addTask);
             this.listenTo(this.mediator, "prj_selected", this.prj_selected);
             this.listenTo(this.mediator, "del_proj_modal", this.del_proj_modal);
+            this.listenTo(this.mediator, "edit_proj_modal", this.edit_proj_modal);
         },
         
         render: function() {
@@ -51,6 +53,7 @@ var HomeView = (function(Backbone,
             this.$el.append(this.project_modal);
             this.$el.append(this.task_modal);
             this.$el.append(this.prj_del_modal);
+            this.$el.append(this.ed_project_modal);
             this.projects.forEach(this.addProject.bind(this));
             this.tasks.forEach(this.addTask.bind(this));
             
@@ -68,18 +71,10 @@ var HomeView = (function(Backbone,
             this.$("#task_modal").focus();
         },
         
-        modal_escape: function(event) {
-            if((!this.$("#project_modal").hasClass("hide") ||
-                !this.$("#task_modal").hasClass("hide"))&&
-               event.keyCode === 27) {
-                this.$("#project_modal, #task_modal").addClass("hide");
-                
-            }
-        },
-        
         prj_modal_close: function() { this.$("#project_modal").addClass("hide"); },
         task_modal_close: function() { this.$("#task_modal").addClass("hide"); },
-        prj_del_close: function() { this.$("#prj_del_modal").addClass("hide"); }, 
+        prj_del_close: function() { this.$("#prj_del_modal").addClass("hide"); },
+        eprj_modal_close: function() { this.$("#edit_project_modal").addClass("hide"); },
         
         prj_modal_save: function() {
             var name;
@@ -143,6 +138,25 @@ var HomeView = (function(Backbone,
             this.delProjectView &&
                 this.delProjectView.trigger("deleteProj", { collection: this.tasks });
             this.$("#prj_del_modal").addClass("hide");
+        },
+        
+        edit_proj_modal: function(event) {
+            var prjView = event.view,
+                prjModel = prjView.model;
+            
+            this.editProjectModel = prjModel;
+            this.$("#eprj_modal_name").val(prjModel.get("name"));
+            this.$("#edit_project_modal").removeClass("hide");
+        },
+        
+        eprj_modal_save: function() {
+            this.$("#edit_project_modal").addClass("hide");
+            
+            if (this.editProjectModel) {
+                this.editProjectModel.save({
+                    name: this.$("#eprj_modal_name").val()
+                });
+            }
         }
     });
     

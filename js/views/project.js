@@ -8,7 +8,8 @@ var ProjectView = (function(Backbone) {
         tagName: "li",
         
         events: {
-            "click .project_item span": "delProjModal",
+            "click .project_item span.del": "delProjModal",
+            "click .project_item span.edit": "editProjModal",
             "click .project_item": "selected"
         },
         
@@ -17,15 +18,21 @@ var ProjectView = (function(Backbone) {
             this.model = options.model;
             this.mediator = options.mediator;
             
+            this.listenTo(this.model, "change", this.projectChange);
             this.listenTo(this.mediator, "prj_selected", this.prj_selected);
             this.on("deleteProj", this.deleteProj);
         },
         
         render: function() {
             this.$el.append(["<a class='project_item'>",
+                             "<span class='name'>",
                              this.model.get("name"),
-                             "<span>",
+                             "</span>",
+                             "<span class='del'>",
                              "×",
+                             "</span>",
+                             "<span class='edit'>",
+                             "E",
                              "</span>",
                              "</a>"].join(""));
             
@@ -35,6 +42,11 @@ var ProjectView = (function(Backbone) {
         delProjModal: function(event) {
             event.stopPropagation();
             this.mediator.trigger("del_proj_modal", { view: this });
+        },
+        
+        editProjModal: function(event) {
+            event.stopPropagation();
+            this.mediator.trigger("edit_proj_modal", { view: this });
         },
         
         deleteProj: function(event) {
@@ -66,6 +78,10 @@ var ProjectView = (function(Backbone) {
             } else {
                 this.$el.removeClass("pure-menu-selected");
             }
+        },
+        
+        projectChange: function() {
+            this.$("span.name").text(this.model.get("name"));
         }
     });
 }(Backbone, load_template));
