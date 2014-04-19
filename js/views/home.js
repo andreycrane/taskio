@@ -4,6 +4,7 @@ var HomeView = (function(Backbone,
                          ProjectView,
                          TasksCollection,
                          TaskView,
+                         ProjectsView,
                          load_template) {
     "use strict";
     
@@ -46,6 +47,11 @@ var HomeView = (function(Backbone,
             this.listenTo(this.mediator, "prj_selected", this.prj_selected);
             this.listenTo(this.mediator, "del_proj_modal", this.del_proj_modal);
             this.listenTo(this.mediator, "edit_proj_modal", this.edit_proj_modal);
+            
+            this.projectsView = new ProjectsView({
+                projects: this.projects,
+                mediator: this.mediator
+            });
         },
         
         render: function() {
@@ -56,6 +62,8 @@ var HomeView = (function(Backbone,
             this.$el.append(this.ed_project_modal);
             this.projects.forEach(this.addProject.bind(this));
             this.tasks.forEach(this.addTask.bind(this));
+            
+            this.$("#projects_container").append(this.projectsView.render().$el);
             
             return this;
         },
@@ -167,4 +175,5 @@ var HomeView = (function(Backbone,
   ProjectView,
   TasksCollection,
   TaskView,
+  ProjectsView,
   load_template));
