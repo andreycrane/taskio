@@ -7,8 +7,92 @@
 var ProjectsView = (function(Backbone,
                              _,
                              load_template,
-                             ProjectView) {
+                             ProjectView,
+                             ProjectModel) {
     'use strict';
+    
+    var ProjectModal,
+        ProjectDeleteModal;
+    
+    /**
+     * Модальная форма проекта
+     * 
+     * @class ProjectModal
+     * @constructor
+     * @extends Backbone.View
+     */
+    ProjectModal = Backbone.View.extend({
+        id: "project-modal-container",
+        template: _.template(load_template("project_modal")),
+        
+        events: {
+            "keyup #project_modal": "modalEscape",
+            "click #close": "modalClose",
+            "click #save": "modalSave"
+        },
+        
+        render: function() { return this; },
+        
+        modalShow: function(options) {
+            this.options = options;
+            
+            this.$el.append(this.template({
+                legend: options.legend,
+                name: options.project.get("name")
+            }));
+            
+            this.$("#project_modal").focus();
+        },
+        
+        modalClose: function() { this.$el.empty(); },
+        
+        modalEscape: function(event) {
+            if (event.keyCode === 27) { this.modalClose(); }
+        },
+        
+        modalSave: function() {
+            this.options.project.set("name", this.$("#project_name").val());
+            this.trigger("save", this.options);
+            this.$el.empty();
+        }
+    });
+    /**
+     * Модальное окно запроса удаления проекта и его дочерних задач.
+     * 
+     * @class ProjectDeleteModal
+     * @constructor
+     * @extends Backbone.View
+     */
+    ProjectDeleteModal = Backbone.View.extend({
+        id: "project-delete-modal-container",
+        template: load_template("delete_project_modal"),
+        
+        events: {
+            "keyup #prj_del_modal": "modalEscape",
+            "click #prj_del_close": "modalClose",
+            "click #prj_btn_delete": "modalDelete"
+        },
+        
+        render: function() { return this; },
+        
+        modalClose: function() { this.$el.empty(); },
+        
+        modalEscape: function(event) {
+            if (event.keyCode === 27) { this.modalClose(); }
+        },
+        
+        modalShow: function(options) {
+            this.options = options;
+            
+            this.$el.append(this.template);
+            this.$("#prj_del_modal").focus();
+        },
+        
+        modalDelete: function() {
+            this.trigger("delete", this.options);
+            this.$el.empty();
+        }
+    });
     /**
      * Вид списка проектов
      * 
@@ -20,7 +104,7 @@ var ProjectsView = (function(Backbone,
         project_template: load_template("projects"),
         
         events: {
-            "clicj #create_project": "create_project"
+            "click #create_project": "create_project"
         },
         /**
          * Инициализация вида
@@ -32,8 +116,26 @@ var ProjectsView = (function(Backbone,
             options = options || {};
             // коллекция с моделями проектов
             this.projects = options.projects;
+            // коллекция с моделями задач
+            this.tasks = options.tasks;
             // медиатор для передачи событий между видами
             this.mediator = options.mediator;
+            // модальное окно для работы с проектом
+            this.projectModal = new ProjectModal();
+            // модальное окно для запроса удаления проекта
+            this.projectDelModal = new ProjectDeleteModal(); 
+            // подписываемся на прослушивание события save
+            // модального окна
+            this.listenTo(this.projectModal, "save", this.modalSave);
+            // событие delete модального окна удаления проекта
+            this.listenTo(this.projectDelModal, "delete", this.projectDelete.bind(this));
+            // событие добавления проекта в коллекцию
+            this.listenTo(this.projects, "add", this.addProject.bind(this));
+            // событие изменения модели проекта
+            this.listenTo(this.mediator, "editProject", this.edit_project);
+            // событие удаления модели проекта
+            this.listenTo(this.mediator, "deleteProject", this.deleteModal);
+            
         },
         /**
          * Метод рендеринга вида
@@ -44,15 +146,14 @@ var ProjectsView = (function(Backbone,
         render: function() {
             var that = this;
             
+            // рендерим шаблон вида
             this.$el.append(this.project_template);
-            this.projects.forEach(function(project) {
-                var projectView = new ProjectView({
-                    model: project,
-                    mediator: that.mediator
-                });
-                
-                that.$("#projects_list").append(projectView.render().$el);
-            });
+            // рендерим шаблон модального окна
+            this.$el.append(this.projectModal.render().$el);
+            // рендерим шаблон модального окна удаления проекта
+            this.$el.append(this.projectDelModal.render().$el);
+            // рендерим виды пунктов проектов
+            this.projects.forEach(this.addProject.bind(this));
             
             return this;
         },
@@ -62,11 +163,86 @@ var ProjectsView = (function(Backbone,
          * @method create_project
          */
         create_project: function() {
+            this.projectModal.modalShow({
+                legend: "Новый проект",
+                project: new ProjectModel(),
+                create: true
+            });
+        },
+        /**
+         * Обработчик события редактирования модели проекта.
+         * Запускает модальное окно для редатктирования.
+         * 
+         * @method edit_project
+         * @param {ProjectModel} project
+         */
+        edit_project: function(project) {
+            this.projectModal.modalShow({
+                legend: "Переименовать проект",
+                project: project,
+                create: false
+            });
+        },
+        /**
+         * Обработка события save модального окна проекта
+         * 
+         * @method save
+         * @param {Object} options
+         */
+        modalSave: function(options) {
+            if (options.create) {
+                this.projects.add(options.project);
+            } 
+            options.project.save();
+        },
+        /**
+         * Обработчик добавления новой модели проекта в коллекцию
+         *
+         * @method addProject
+         * @param {ProjectModel} project - экземпляр модели проекта
+         */
+        addProject: function(project) {
+            var projectView = new ProjectView({
+                model: project,
+                mediator: this.mediator
+            });
             
+            this.$("#projects_list").append(projectView.render().$el);
+        },
+        /**
+         * Обработчик события удаления модели проекта. Выводит модальное окно
+         * с вопросом удалять или нет проект и его дочерние задачи.
+         * 
+         * @method deleteModal
+         * @param {Object} event - событие содержащее ссылку на модель проекта
+         */
+        deleteModal: function(event) {
+            this.projectDelModal.modalShow({ project: event.project });
+        },
+        /**
+         * Обработчик положительного ответа модального окна запроса на удаление
+         * проекта и его дочерних задач.
+         * 
+         * @method projectDelete
+         */
+        projectDelete: function(event) {
+            var project = event.project,
+                projectTasks;
+            
+            projectTasks = this.tasks.filter(function(task) {
+                return task.get("project_id") === project.id;
+            });
+            
+            projectTasks.forEach(function(task) {
+                task.destroy();
+            });
+            
+            project.destroy();
         }
     });
     
 }(Backbone,
   _,
   load_template,
-  ProjectView));
+  ProjectView,
+  ProjectModel));

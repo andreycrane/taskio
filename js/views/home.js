@@ -50,6 +50,7 @@ var HomeView = (function(Backbone,
             
             this.projectsView = new ProjectsView({
                 projects: this.projects,
+                tasks: this.tasks,
                 mediator: this.mediator
             });
         },
@@ -58,7 +59,6 @@ var HomeView = (function(Backbone,
             this.$el.append(this.home_template);
             this.$el.append(this.project_modal);
             this.$el.append(this.task_modal);
-            this.$el.append(this.prj_del_modal);
             this.$el.append(this.ed_project_modal);
             this.projects.forEach(this.addProject.bind(this));
             this.tasks.forEach(this.addTask.bind(this));
