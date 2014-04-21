@@ -25,8 +25,7 @@ var TaskView = (function(Backbone,
             this.mediator = options.mediator;
             this.project = this.projects.get(this.model.get("project_id"));
             
-            this.listenTo(this.mediator, "prj_selected", this.prj_selected);
-            this.listenTo(this.model, "destroy", this.task_destroy);
+            this.listenTo(this.mediator, "prj_selected", this.prj_selected.bind(this));
             
             if (this.project) {
                 this.listenTo(this.project, "change", this.prj_name_changed);
@@ -106,9 +105,9 @@ var TaskView = (function(Backbone,
         },
         
         saveTask: function() {
-            this.stopListening(this.project);
+            this.stopListening(this.project, "all");
             this.project = this.projects.get(this.$("#t_project").val());
-            
+             
             if (this.project) {
                 this.listenTo(this.project, "change", this.prj_name_changed);
             }
@@ -119,6 +118,8 @@ var TaskView = (function(Backbone,
                 "description":  this.$("#t_description").val(),
                 "done": this.$("#t_done").is(':checked')
             });
+            
+            this.listenTo(this.model, "destroy", this.task_destroy);
             
             this.closeEdit();
         },
