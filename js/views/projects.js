@@ -102,9 +102,17 @@ var ProjectsView = (function(Backbone,
     return Backbone.View.extend({
         id: "projects-view",
         project_template: load_template("projects"),
+        /**
+         * Текущий выбранный проект
+         *
+         * @property current_project
+         * @type {Object}
+         */
+        current_project: null,
         
         events: {
-            "click #create_project": "create_project"
+            "click #create_project": "create_project",
+            "click #all_tasks": "allTasks"
         },
         /**
          * Инициализация вида
@@ -233,11 +241,33 @@ var ProjectsView = (function(Backbone,
                 return task.get("project_id") === project.id;
             });
             
+            console.log(projectTasks);
+            
             projectTasks.forEach(function(task) {
-                task.destroy();
+                task.destroy(projectTasks);
             });
             
             project.destroy();
+        },
+        /**
+         * Посылка сигнала видам задач (TaskView's) сигнала о том что выбран
+         * фильтр 'Все задачи'
+         * 
+         * @method allTasks
+         */
+        allTasks: function() {
+            this.mediator.trigger("prj_selected", { model: null });
+        },
+        /**
+         * Прослушивание события выбора проекта в качестве фильтра
+         * для отобраджения списка задач.
+         * 
+         * @method prj_selected
+         * @param {Object} event объект содержащий ссылку на модель текущего
+         * выбранного проекта
+         */
+        prj_selected: function(event) {
+            this.current_project = (event.model === null) ? null : event.model.id;
         }
     });
     

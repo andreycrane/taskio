@@ -174,7 +174,7 @@ var TaskView = (function(Backbone,
             }
         },
         
-        task_destroy: function() { console.log("1"); this.remove(); },
+        task_destroy: function() { this.remove(); },
         
         prj_name_changed: function() {
             this.$("#t_project").text(this.project.get("name"));
