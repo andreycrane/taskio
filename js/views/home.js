@@ -5,6 +5,7 @@ var HomeView = (function(Backbone,
                          TasksCollection,
                          TaskView,
                          ProjectsView,
+                         TasksView,
                          load_template) {
     "use strict";
     
@@ -39,6 +40,12 @@ var HomeView = (function(Backbone,
                 tasks: this.tasks,
                 mediator: this.mediator
             });
+            
+            this.tasksView = new TasksView({
+                tasks: this.tasks,
+                projects: this.projects,
+                mediator: this.mediator
+            });
         },
         
         render: function() {
@@ -47,6 +54,7 @@ var HomeView = (function(Backbone,
             this.tasks.forEach(this.addTask.bind(this));
             
             this.$("#projects_container").append(this.projectsView.render().$el);
+            this.$("#tasks_container").append(this.tasksView.render().$el);
             
             return this;
         },
@@ -104,4 +112,5 @@ var HomeView = (function(Backbone,
   TasksCollection,
   TaskView,
   ProjectsView,
+  TasksView,
   load_template));

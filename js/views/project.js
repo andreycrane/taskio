@@ -1,4 +1,5 @@
-var ProjectView = (function(Backbone) {
+var ProjectView = (function(Backbone,
+                            load_template) {
     "use strict";
     
     var id_counter = 0;
@@ -6,6 +7,7 @@ var ProjectView = (function(Backbone) {
     return Backbone.View.extend({
         id: function() { return "project-view-" + (id_counter += 1); },
         tagName: "li",
+        template: _.template(load_template("project")),
         
         events: {
             "click .project_item span.del": "deleteClick",
@@ -25,17 +27,9 @@ var ProjectView = (function(Backbone) {
         },
         
         render: function() {
-            this.$el.append(["<a class='project_item'>",
-                             "<span class='name'>",
-                             this.project.get("name"),
-                             "</span>",
-                             "<span class='del'>",
-                             "×",
-                             "</span>",
-                             "<span class='edit'>",
-                             "E",
-                             "</span>",
-                             "</a>"].join(""));
+            this.$el.append(this.template({
+                name: this.project.get("name")
+            }));
             
             return this;
         },
