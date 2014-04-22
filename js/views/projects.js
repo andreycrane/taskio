@@ -136,7 +136,8 @@ var ProjectsView = (function(Backbone,
             this.listenTo(this.mediator, "editProject", this.edit_project);
             // событие удаления модели проекта
             this.listenTo(this.mediator, "deleteProject", this.deleteModal);
-            
+            // событие выбора проекта в качестве фильтра
+            this.listenTo(this.mediator, "prj_selected", this.prj_selected);
         },
         /**
          * Метод рендеринга вида
@@ -248,6 +249,18 @@ var ProjectsView = (function(Backbone,
          */
         allTasks: function() {
             this.mediator.trigger("prj_selected", { model: null });
+        },
+        /**
+         * Обработка события установки проекта в качестве фильтра
+         * 
+         * @method prj_selected
+         */
+        prj_selected: function(event) {
+            if (event.model !== null) {
+                this.$("#all_tasks").removeClass("pure-menu-selected");
+            } else {
+                this.$("#all_tasks").addClass("pure-menu-selected");
+            }
         }
     });
     
