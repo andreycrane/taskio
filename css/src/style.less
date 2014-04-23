@@ -1,6 +1,8 @@
 @import "modal.less";
 @import "projects.less";
-@import "task.less";
+@import "tasks.less";
+@import "content.less";
+@import "scrollbars.less";
 
 @font-face {
 	font-family: 'typicons';
@@ -79,7 +81,7 @@ a {
     top: 0px;
     left: 0px;
     right: 0px;
-    bottom: 0px;
+    bottom: 5px;
 }
 
 .component {
@@ -90,10 +92,10 @@ a {
 }
 
 .animate .container::after {
-	opacity: 1;
-	height: 101%;
-	-webkit-transition: opacity 0.5s;
-	transition: opacity 0.5s;
+    opacity: 1;
+    height: 100%;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
 }
 
 /* Outer Nav */
@@ -255,78 +257,6 @@ a {
         
         &:hover {
             color: #333;
-        }
-    }
-}
-
-
-.navbar {
-    height: 55px;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    background: #ffdccd;
-    
-    .brand {
-        display: block;
-        float: left;
-        color: #e86a32;
-        font-size: 45px;
-        padding: 0px;
-        margin-bottom: 10px;
-        margin-left: 10px;
-        word-spacing: 0px;
-        
-        span {
-            color: white;
-            margin: 0px;
-            padding: 0px;
-        }
-    }
-    
-    .btn {
-        display: block;
-        float: left;
-        background-color: #e86a32;
-        padding: 5px;
-        width: 45px;
-        height: 45px;
-        
-        span {
-            display: block;
-            height: 5px;
-            width: 40px;
-            margin-bottom: 5px;
-            margin-top: 5px;
-            background: white;
-        }
-    }
-}
-
-.content-container {
-    display: block;
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 100%;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    
-    #home-view {
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        right: 0px;
-        left: 0px;
-        
-        .pure-g-r {
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            right: 0px;
-            left: 0px;
         }
     }
 }
