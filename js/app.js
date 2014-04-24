@@ -2,7 +2,7 @@ $(function (){
     var app;
     
     app = new ApplicationView({
-        el: $("#perspective")
+        el: $("body")
     });
     
     app.home();
