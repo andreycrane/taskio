@@ -80,7 +80,8 @@ var TasksView = (function(Backbone,
          * @type {Object}
          */
         events: {
-            "click #new_task": "createTask"
+            "click #new_task": "createTask",
+            "click #search_btn": "searchTask"
         },
         /**
          * Инициализция вида
@@ -153,6 +154,14 @@ var TasksView = (function(Backbone,
         modalSave: function(options) {
             this.tasks.add(options.task);
             options.task.save();
+        },
+        /**
+         * Поиск задачи по тексту заданному в поиске
+         * 
+         * @searchTask
+         */
+        searchTask: function() {
+            this.mediator.trigger("search", { q: this.$("#s_query").val() });
         }
     });
     

@@ -12,7 +12,7 @@ var ProjectView = (function(Backbone,
         events: {
             "click .project_item span.del": "deleteClick",
             "click .project_item span.edit": "editClick",
-            "click .project_item": "selected"
+            "click": "selected"
         },
         
         initialize: function(options) {
@@ -62,9 +62,9 @@ var ProjectView = (function(Backbone,
         
         prj_selected: function(event) {
             if (this.project === event.model) {
-                this.$el.addClass("pure-menu-selected");
+                this.$el.addClass("selected");
             } else {
-                this.$el.removeClass("pure-menu-selected");
+                this.$el.removeClass("selected");
             }
         },
         /**

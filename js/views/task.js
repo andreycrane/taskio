@@ -26,6 +26,7 @@ var TaskView = (function(Backbone,
             this.project = this.projects.get(this.model.get("project_id"));
             
             this.listenTo(this.mediator, "prj_selected", this.prj_selected.bind(this));
+            this.listenTo(this.mediator, "search", this.searchProject);
             
             if (this.project) {
                 this.listenTo(this.project, "change", this.prj_name_changed);
@@ -179,6 +180,32 @@ var TaskView = (function(Backbone,
         
         prj_name_changed: function() {
             this.$("#t_project").text(this.project.get("name"));
+        },
+        /**
+         * Обработка поиска задачи
+         * 
+         * @searchProject
+         * @param {Object} event - объект содержащий искомый текст
+         */
+        searchProject: function(event) {
+            var name_r, // результат поиска в имени задачи
+                description_r; // результат поиска в описании задачи
+            
+            // если поиск по пустой строке показывает задачу
+            if (event.q === "") {
+                this.$el.fadeIn("fast");
+                return;
+            }
+            
+            name_r = this.model.get("name").search(event.q);
+            description_r = this.model.get("description").search(event.q);
+            
+            if((name_r === -1) && (description_r === -1)) {
+                // если совпадения не найдены скрываем строчку задания
+                this.$el.fadeOut("fast");
+            } else {
+                
+            }
         }
     });
 })(Backbone,

@@ -1,6 +1,44 @@
 #tasks-view {
-    #new_task {
+    button#new_task {
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 310px;
+        height: 40px;
+        width: 150px;
+        border: none;
+        background-color: #bdc3c7;
+    }
+    
+    input#s_query {
+        position: fixed;
+        top: 60px;
+        right: 100px;
+        width: 200px;
+        height: 37px;
         
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid #95a5a6;
+        
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    button#search_btn {
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        width: 81px;
+        height: 39px;
+        
+        border: none;
+        background-color: #2ecc71;
+        
+        &:focus {
+            outline: none;
+        }
     }
     
     #tasks_list {
@@ -10,8 +48,11 @@
         right: 0px;
         top: 110px !important;
         bottom: 0px;
-        padding: 5px;
-        
         border-top: 1px solid #eee;
+        
+        .task {
+            display: block;
+            border-bottom: 1px solid #ecf0f1;
+        }
     }
 }

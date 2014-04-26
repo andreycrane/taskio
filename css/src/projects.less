@@ -8,8 +8,8 @@
         width: 280px;
         height: 40px;
         
-        background-color: #d5d5d5;
-        color: black;
+        background-color: #e74c3c;
+        color: white;
         border: none;
     }
     
@@ -23,15 +23,21 @@
         
         padding: 0px;
         margin: 0px;
-        border-top: 1px solid  #d5d5d5;
+        border-top: 1px solid #ecf0f1;
         
         overflow-y: auto;
         
         li {
             display: block;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #ecf0f1;
             height: 50px;
             padding: 5px;
+            -webkit-transition: background-color 0.8s ease;
+            
+            
+            &:hover {
+                background-color: #ecf0f1;
+            }
         }
     }
 }

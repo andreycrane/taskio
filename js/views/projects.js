@@ -257,9 +257,9 @@ var ProjectsView = (function(Backbone,
          */
         prj_selected: function(event) {
             if (event.model !== null) {
-                this.$("#all_tasks").removeClass("pure-menu-selected");
+                this.$("#all_tasks").removeClass("selected");
             } else {
-                this.$("#all_tasks").addClass("pure-menu-selected");
+                this.$("#all_tasks").addClass("selected");
             }
         }
     });
