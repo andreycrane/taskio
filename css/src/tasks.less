@@ -54,11 +54,48 @@
             display: block;
             border-bottom: 1px solid #ecf0f1;
             
-            
-            div #t_project {
-                display: block;
+            div {
+                display: inline-block;
                 width: 100%;
-                background-color: gray;
+                clear: both;
+                margin-top: 5px;
+                
+                span#t_project {
+                    float: left;
+                    margin-left: 5px;
+                    font-size: 17px;
+                    color: darken(#bdc3c7, 3d0%);
+                }
+                
+                button {
+                    float: right;
+                    display: block;
+                    border: none;
+                    margin-right: 5px;
+                    float: right;
+                    width: 20px;
+                    height: 20px;
+                    background-size: contain;
+                    background-color: white; 
+                    
+                    &#delete_task {
+                        background-image: url('../img/del.svg');
+                    }
+                    
+                    &#edit_task {
+                        background-image: url('../img/edit.svg');
+                    }
+                }
+            }
+            
+            h6 {
+                margin: 0 5px;
+                padding: 0;
+            }
+            
+            p#t_description {
+                display: inline-block;
+                margin: 10px 5px;
             }
         }
     }
