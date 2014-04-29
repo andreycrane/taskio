@@ -22,7 +22,7 @@ var ProjectsView = (function(Backbone,
      * @extends Backbone.View
      */
     ProjectModal = Backbone.View.extend({
-        id: "project-modal-container",
+        el: "body",
         template: _.template(load_template("project_modal")),
         
         events: {
@@ -30,8 +30,6 @@ var ProjectsView = (function(Backbone,
             "click #close": "modalClose",
             "click #save": "modalSave"
         },
-        
-        render: function() { return this; },
         
         modalShow: function(options) {
             this.options = options;
@@ -44,7 +42,7 @@ var ProjectsView = (function(Backbone,
             this.$("#project_modal").focus();
         },
         
-        modalClose: function() { this.$el.empty(); },
+        modalClose: function() { this.$("#project_modal").remove(); },
         
         modalEscape: function(event) {
             if (event.keyCode === 27) { this.modalClose(); }
@@ -53,7 +51,7 @@ var ProjectsView = (function(Backbone,
         modalSave: function() {
             this.options.project.set("name", this.$("#project_name").val());
             this.trigger("save", this.options);
-            this.$el.empty();
+            this.modalClose();
         }
     });
     /**
@@ -64,7 +62,7 @@ var ProjectsView = (function(Backbone,
      * @extends Backbone.View
      */
     ProjectDeleteModal = Backbone.View.extend({
-        id: "project-delete-modal-container",
+        el: "body",
         template: load_template("delete_project_modal"),
         
         events: {
@@ -73,9 +71,7 @@ var ProjectsView = (function(Backbone,
             "click #prj_btn_delete": "modalDelete"
         },
         
-        render: function() { return this; },
-        
-        modalClose: function() { this.$el.empty(); },
+        modalClose: function() { this.$("#prj_del_modal").remove(); },
         
         modalEscape: function(event) {
             if (event.keyCode === 27) { this.modalClose(); }
@@ -90,7 +86,7 @@ var ProjectsView = (function(Backbone,
         
         modalDelete: function() {
             this.trigger("delete", this.options);
-            this.$el.empty();
+            this.modalClose();
         }
     });
     /**
@@ -150,10 +146,6 @@ var ProjectsView = (function(Backbone,
             
             // рендерим шаблон вида
             this.$el.append(this.project_template);
-            // рендерим шаблон модального окна
-            this.$el.append(this.projectModal.render().$el);
-            // рендерим шаблон модального окна удаления проекта
-            this.$el.append(this.projectDelModal.render().$el);
             // рендерим виды пунктов проектов
             this.projects.forEach(this.addProject.bind(this));
             
