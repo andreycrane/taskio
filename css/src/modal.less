@@ -1,4 +1,4 @@
-@brd-radius: 5px;
+@brd-radius: 3px;
 
 .pure-modal {
     position: fixed;
@@ -6,7 +6,7 @@
     left: 0px;
     bottom: 0px;
     right: 0px;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(44, 62, 80, 0.9);
     z-index: 99999999;
     
     &.hide {
@@ -14,7 +14,6 @@
     }
     
     .modal-container {
-        border-radius: @brd-radius;
         display: block;
         top: 45%;
         left: 50%;
@@ -25,19 +24,26 @@
         height: auto;
         background-color: white;
         z-index: 999;
+        border: none;
+        outline: none;
         
         .modal-header, .modal-footer {
+            display: block;
             width: 600px;
-            height: 30px;
-            background-color: #e86a32;
+            height: 40px;
+            border: none;
+            outline: none;
+            background-color: #34495e;
         }
         
         .modal-header {
-            border-radius: @brd-radius @brd-radius 0 0;
+            position: relative;
+            top: -1px;
         }
         
         .modal-footer {
-             border-radius: 0 0 @brd-radius @brd-radius;
+            position: relative;
+            bottom: -1px;
         }
         
         .modal-content {
