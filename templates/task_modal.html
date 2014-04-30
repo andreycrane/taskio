@@ -1,10 +1,11 @@
 <div id="task_modal" class="pure-modal" tabindex="-1">
     <div class="modal-container">
-        <div class="modal-header"></div>
+        <div class="modal-header">
+            Новая задача
+        </div>
         <div class="modal-content">
             <form class="pure-form pure-form-stacked">
                 <fieldset>
-                    <legend>Новая задача</legend>
                     
                     <label for="task_name">Название</label>
                     <input id="task_name"
@@ -18,17 +19,18 @@
                     <label for="done" class="pure-checkbox">
                         <input id="done" type="checkbox"> Выполнено
                     </label>
-                    
-                    <button id="task_modal_save"
-                            type="button"
-                            class="pure-button pure-button-primary">
-                        Сохранить
-                    </button>
-                    <button id="task_modal_close"
-                            type="button"
-                            class="pure-button">
-                        Отмена
-                    </button>
+                    <div class="btn-container">
+                        <button id="task_modal_save"
+                                type="button"
+                                class="modal-save">
+                            Сохранить
+                        </button>
+                        <button id="task_modal_close"
+                                type="button"
+                                class="modal-close">
+                            Отмена
+                        </button>
+                    </div>
                 </fieldset>
             </form>
         </div>

@@ -17,22 +17,13 @@ var TasksView = (function(Backbone,
      * @extends Backbone.View
      */
     var TaskModal = Backbone.View.extend({
-        id: "task-modal-container",
+        el: "body",
         template: load_template("task_modal"),
         
         events: {
             "keyup #task_modal": "modalEscape",
             "click #task_modal_close": "modalClose",
             "click #task_modal_save": "modalSave"
-        },
-        /**
-         * Рендеринг модальной формы
-         * 
-         * @method render
-         * @chainable
-         */
-        render: function()  {
-            return this;
         },
         /**
          * Метод открытия модального окна создания новой задачи
@@ -47,7 +38,7 @@ var TasksView = (function(Backbone,
             this.$("#task_modal").focus();
         },
         
-        modalClose: function () { this.$el.empty(); },
+        modalClose: function () { this.$("#task_modal").remove(); },
         
         modalEscape: function(event) {
             if (event.keyCode === 27) { this.modalClose(); }
@@ -112,7 +103,6 @@ var TasksView = (function(Backbone,
          */
         render: function() {
             this.$el.append(this.template);
-            this.$el.append(this.taskModal.render().$el);
             
             this.tasks.forEach(this.addTask.bind(this));
             
