@@ -28,7 +28,8 @@ var ProjectsView = (function(Backbone,
         events: {
             "keyup #project_modal": "modalEscape",
             "click #close": "modalClose",
-            "click #save": "modalSave"
+            "click #save": "modalSave",
+            "keypress #project_name": "validateName"
         },
         
         modalShow: function(options) {
@@ -49,9 +50,19 @@ var ProjectsView = (function(Backbone,
         },
         
         modalSave: function() {
-            this.options.project.set("name", this.$("#project_name").val());
-            this.trigger("save", this.options);
-            this.modalClose();
+            var val = this.$("#project_name").val();
+            
+            if (_.isEmpty(val)) {
+                this.$("#project_name_err").fadeIn("slow");
+            } else {
+                this.options.project.set("name", val);
+                this.trigger("save", this.options);
+                this.modalClose();
+            }
+        },
+        
+        validateName: function() {
+            this.$("#project_name_err").fadeOut("medium");
         }
     });
     /**
@@ -159,7 +170,7 @@ var ProjectsView = (function(Backbone,
         create_project: function() {
             this.projectModal.modalShow({
                 legend: "Новый проект",
-                project: new ProjectModel(),
+                project: new ProjectModel({ name: "" }),
                 create: true
             });
         },

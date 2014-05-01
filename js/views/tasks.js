@@ -23,7 +23,8 @@ var TasksView = (function(Backbone,
         events: {
             "keyup #task_modal": "modalEscape",
             "click #task_modal_close": "modalClose",
-            "click #task_modal_save": "modalSave"
+            "click #task_modal_save": "modalSave",
+            "keypress #task_name": "validateName"
         },
         /**
          * Метод открытия модального окна создания новой задачи
@@ -45,13 +46,23 @@ var TasksView = (function(Backbone,
         },
         
         modalSave: function() {
-            this.options.task.set({
-                name: this.$("#task_name").val(),
-                done: this.$("#done").is(":checked"),
-                description: this.$("#description").val()
-            });
-            this.modalClose();
-            this.trigger("save", this.options);
+            var name =  this.$("#task_name").val();
+            
+            if (_.isEmpty(name)) {
+                this.$("#task_name_err").fadeIn("slow");
+            } else {
+                this.options.task.set({
+                    name: this.$("#task_name").val(),
+                    done: this.$("#done").is(":checked"),
+                    description: this.$("#description").val()
+                });
+                this.modalClose();
+                this.trigger("save", this.options);
+            }
+        },
+        
+        validateName: function() {
+            this.$("#task_name_err").fadeOut("slow");
         }
     });
     /**
