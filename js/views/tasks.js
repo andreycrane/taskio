@@ -18,7 +18,7 @@ var TasksView = (function(Backbone,
      */
     var TaskModal = Backbone.View.extend({
         el: "body",
-        template: load_template("task_modal"),
+        template: _.template(load_template("task_modal")),
         
         events: {
             "keyup #task_modal": "modalEscape",
@@ -35,7 +35,11 @@ var TasksView = (function(Backbone,
          */
         modalShow: function(options) {
             this.options = options;
-            this.$el.append(this.template);
+            this.$el.append(this.template({
+                legend: (options.create) ? "Новая задача" : "Редактировать задачу",
+                name: options.task.get("name"),
+                description: options.task.get("description")
+            }));
             this.$("#task_modal").focus();
         },
         
@@ -105,6 +109,8 @@ var TasksView = (function(Backbone,
             this.listenTo(this.taskModal, "save", this.modalSave);
             // прослушивание события добавления новой модели в коллекцию задач
             this.listenTo(this.tasks, "add", this.addTask.bind(this));
+            // прослушивание события редактирования задачи
+            this.listenTo(this.mediator, "editTask", this.editTask.bind(this));
         },
         /**
          * Рендеринг вида списка задач
@@ -143,7 +149,8 @@ var TasksView = (function(Backbone,
             var task = new TaskModel();
             
             this.taskModal.modalShow({
-                task: task
+                task: task,
+                create: true
             });
         },
         /**
@@ -153,7 +160,10 @@ var TasksView = (function(Backbone,
          * @param {Object} options - опции возвращаемые модальным окном
          */
         modalSave: function(options) {
-            this.tasks.add(options.task);
+            if (options.create) {
+                this.tasks.add(options.task);
+            }
+            
             options.task.save();
         },
         /**
@@ -163,6 +173,17 @@ var TasksView = (function(Backbone,
          */
         searchTask: function() {
             this.mediator.trigger("search", { q: this.$("#s_query").val() });
+        },
+        /**
+         * Обработчик события редактирования задачи
+         * @method editTask
+         * @param {Object} event - объект содержащий модель для редактирования
+         */
+        editTask: function(event) {
+            this.taskModal.modalShow({
+                task: event.task,
+                create: false
+            });
         }
     });
     
