@@ -43,6 +43,8 @@ var TasksView = (function(Backbone,
                 legend: (options.create) ? "Новая задача" : "Редактировать задачу",
                 projects: options.projects,
                 name: options.task.get("name"),
+                create: options.create,
+                done: options.task.get("done") ? "checked": "",
                 description: options.task.get("description")
             }));
             this.$("#task_modal").focus();

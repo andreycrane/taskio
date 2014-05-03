@@ -13,7 +13,8 @@ var TaskView = (function(Backbone,
         
         events: {
             "click #delete_task": "deleteTask",
-            "click #edit_task": "editTask"
+            "click #edit_task": "editTask",
+            "change #t_done": "changeDone"
         },
         
         initialize: function(options) {
@@ -104,6 +105,18 @@ var TaskView = (function(Backbone,
             this.$("#t_name").text(this.model.get("name"));
             this.$("#t_description").text(this.model.get("description"));
             this.$("#t_done").attr("checked", this.model.get("done"));
+        },
+        /**
+         * Обработка события изменения состояния флажка завершенности задачи
+         *
+         * @method changeDone
+         * @param {Object} event объект jQuery-события
+         */
+        changeDone: function() {
+            this.model.set({
+                "done": this.$("#t_done").is(":checked")
+            });
+            this.model.save();
         }
     });
 })(Backbone,

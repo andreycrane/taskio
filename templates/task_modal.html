@@ -26,10 +26,12 @@
             
                     <label for="description">Описание</label>
                     <textarea id="description" class="pure-input-1"><%= description %></textarea>
-            
+                    
+                    <% if (create !== true) { %>
                     <label for="done" class="pure-checkbox">
-                        <input id="done" type="checkbox"> Выполнено
+                        <input id="done" type="checkbox" <%= done %> > Выполнено
                     </label>
+                    <% } %>
                     <div class="btn-container">
                         <button id="task_modal_save"
                                 type="button"
