@@ -34,13 +34,19 @@ var TasksView = (function(Backbone,
          * прослушивающего событие save данной модальной формы
          */
         modalShow: function(options) {
+            var selector = ["#task_project_id option[value='",
+                            options.task.get("project_id"),
+                            "']"].join("");
+            
             this.options = options;
             this.$el.append(this.template({
                 legend: (options.create) ? "Новая задача" : "Редактировать задачу",
+                projects: options.projects,
                 name: options.task.get("name"),
                 description: options.task.get("description")
             }));
             this.$("#task_modal").focus();
+            this.$(selector).attr("selected", "selected");
         },
         
         modalClose: function () { this.$("#task_modal").remove(); },
@@ -56,6 +62,7 @@ var TasksView = (function(Backbone,
                 this.$("#task_name_err").fadeIn("slow");
             } else {
                 this.options.task.set({
+                    project_id: this.$("#task_project_id").val(),
                     name: this.$("#task_name").val(),
                     done: this.$("#done").is(":checked"),
                     description: this.$("#description").val()
@@ -104,7 +111,7 @@ var TasksView = (function(Backbone,
             // медиатор для взаимодействия с другими видами
             this.mediator = options.mediator;
             // модальное окно для создания новой задачи
-            this.taskModal = new TaskModal();
+            this.taskModal = new TaskModal({ projects: this.projects });
             // обработка события save нажатия кнопки сохранить модального окна
             this.listenTo(this.taskModal, "save", this.modalSave);
             // прослушивание события добавления новой модели в коллекцию задач
@@ -146,10 +153,15 @@ var TasksView = (function(Backbone,
          * @method create_task
          */
         createTask: function() {
-            var task = new TaskModel();
+            var task = new TaskModel({
+                name: "",
+                description: "",
+                done: false
+            });
             
             this.taskModal.modalShow({
                 task: task,
+                projects: this.projects,
                 create: true
             });
         },
@@ -182,6 +194,7 @@ var TasksView = (function(Backbone,
         editTask: function(event) {
             this.taskModal.modalShow({
                 task: event.task,
+                projects: this.projects,
                 create: false
             });
         }

@@ -90,8 +90,6 @@ var TaskView = (function(Backbone,
             if((name_r === -1) && (description_r === -1)) {
                 // если совпадения не найдены скрываем строчку задания
                 this.$el.fadeOut("fast");
-            } else {
-                
             }
         },
         /**
@@ -100,6 +98,9 @@ var TaskView = (function(Backbone,
          * @method changeTask
          */
         changeTask: function() {
+            this.project = this.projects.get(this.model.get("project_id"));
+            this.$("#t_project").text(this.project.get("name"));
+            
             this.$("#t_name").text(this.model.get("name"));
             this.$("#t_description").text(this.model.get("description"));
             this.$("#t_done").attr("checked", this.model.get("done"));

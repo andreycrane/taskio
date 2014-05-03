@@ -4,6 +4,15 @@
         <div class="modal-content">
             <form class="pure-form pure-form-stacked">
                 <fieldset>
+                    <label id="task_project">Проект</label>
+                    <select id="task_project_id" class="pure-input-1">
+                        <option value="">Вне проекта</option>
+                        <% projects.forEach(function(project) { %>
+                        <option value="<%= project.get('id') %>">
+                            <%= project.get("name") %>
+                        </option>
+                        <% }); %>
+                    </select>
                     
                     <label for="task_name">Название</label>
                     <input id="task_name"
