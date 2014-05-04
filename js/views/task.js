@@ -77,21 +77,50 @@ var TaskView = (function(Backbone,
          */
         searchProject: function(event) {
             var name_r, // результат поиска в имени задачи
-                description_r; // результат поиска в описании задачи
+                description_r, // результат поиска в описании задачи
+                r; // регулярное выражение искомое в строке
             
+            this.unhighlight();
             // если поиск по пустой строке показывает задачу
             if (event.q === "") {
                 this.$el.fadeIn("fast");
                 return;
             }
             
-            name_r = this.model.get("name").search(event.q);
-            description_r = this.model.get("description").search(event.q);
+            r = new RegExp(event.q, "ig");
+            
+            name_r = this.model.get("name").search(r);
+            description_r = this.model.get("description").search(r);
             
             if((name_r === -1) && (description_r === -1)) {
                 // если совпадения не найдены скрываем строчку задания
                 this.$el.fadeOut("fast");
+            } else {
+                this.$el.fadeIn("fast");
+                this.highlight(r)
             }
+        },
+        /**
+         * Подсветка указанного участка текста в задании
+         *
+         * @method highlight
+         * @param {RegExp} r - регулярное выражение искомого текста
+         */
+        highlight: function(r) {
+            // строка подсвечиваемая в поиске
+            var highl = '<span class="highlight">$&</span>';
+            
+            this.$("#t_name").html(this.model.get("name").replace(r, highl));
+            this.$("#t_description").html(this.model.get("description").replace(r, highl));
+        },
+        /**
+         * Снятие подсветки с текста в задаче
+         * 
+         * @method unhighlight
+         */
+        unhighlight: function() {
+            this.$("#t_name").text(this.model.get("name"));
+            this.$("#t_description").text(this.model.get("description"));
         },
         /**
          * Обработка события изменения модели
