@@ -100,15 +100,6 @@
                     &:first-child {
                         margin-left: 0px;
                     }
-                    
-                    &[type="date"] {
-                        
-                    }
-                    
-                    &[type="time"] {
-                    
-                    }
-                    
                 }
             }
             
@@ -123,6 +114,18 @@
                 margin-bottom: 3px;
                 margin-left: 1px;
                 margin-top: 5px;
+                
+                &#add_to_calendar {
+                    display: inline-block;
+                    
+                    cursor: pointer;
+                    border-bottom: 1px dashed darken(#7f8c8d, 20%);
+                    
+                    &:hover {
+                        color: #7f8c8d;
+                        border-bottom: 1px dashed #7f8c8d;
+                    }
+                }
             }
             
             input[type=text] {

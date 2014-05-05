@@ -24,19 +24,21 @@
                         Необходимо ввести наименование задачи
                     </span>
                     
-                    <details id="task_calendar">
-                        <summary>Добавить в календарь</summary>
-                        <div class="calendar-block">
-                            <input type="date" name="start_date" list />
-                            <input type="time" name="start_time" />
-                            <span>&nbsp;&#8211;&nbsp;</span>
-                            <input type="date" name="end_date" list />
-                            <input type="time" name="end_time" />
+                    <div id="task_calendar">
+                        <label id="add_to_calendar">Добавить в календарь</label>
+                        <div id="calendar_controls" style="display: none;">
+                            <div class="calendar-block">
+                                <input id="start_date" type="date" list value />
+                                <input id="start_time" type="time" />
+                                <span>&nbsp;&#8211;&nbsp;</span>
+                                <input id="end_date" type="date" list value />
+                                <input id="end_time" type="time" />
+                            </div>
+                            <label class="pure-checkbox">
+                                <input id="whole_day" type="checkbox" /> На весь день
+                            </label>
                         </div>
-                        <label class="pure-checkbox">
-                            <input type="checkbox" name="whole_day"> На весь день
-                        </label>
-                    </details>
+                    </div>
             
                     <label for="description">Описание</label>
                     <textarea id="description" class="pure-input-1"><%= description %></textarea>

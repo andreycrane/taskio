@@ -23,7 +23,9 @@ var TasksView = (function(Backbone,
         events: {
             "keyup #task_modal": "modalEscape",
             "click #task_modal_close": "modalClose",
-            "click #task_modal_save": "modalSave",
+            "click #task_modal_save": "validate",
+            "click #add_to_calendar": "calendarControls",
+            "change #whole_day": "calendarWholeDay",
             "keypress #task_name": "validateName"
         },
         /**
@@ -58,24 +60,57 @@ var TasksView = (function(Backbone,
         },
         
         modalSave: function() {
-            var name =  this.$("#task_name").val();
+            this.options.task.set({
+                project_id: this.$("#task_project_id").val(),
+                name: this.$("#task_name").val(),
+                done: this.$("#done").is(":checked"),
+                description: this.$("#description").val()
+            });
+            this.modalClose();
+            this.trigger("save", this.options);
+        },
+        /**
+         * Валидация правильности ввода в информации в поля
+         * формы модального окна.
+         * 
+         * @method validate
+         */
+        validate: function() {
+            var errors = false;
             
-            if (_.isEmpty(name)) {
+            if (_.isEmpty(this.$("#task_name").val())) {
                 this.$("#task_name_err").fadeIn("slow");
-            } else {
-                this.options.task.set({
-                    project_id: this.$("#task_project_id").val(),
-                    name: this.$("#task_name").val(),
-                    done: this.$("#done").is(":checked"),
-                    description: this.$("#description").val()
-                });
-                this.modalClose();
-                this.trigger("save", this.options);
+                errors = true;
             }
+            
+            if (!errors) { this.modalSave(); }
         },
         
         validateName: function() {
             this.$("#task_name_err").fadeOut("slow");
+        },
+        /**
+         * Переключение отображения элементов управления занесения
+         * даты и времени начала и конца задачи
+         * 
+         * @method calendarControls
+         */
+        calendarControls: function() {
+            this.$("#calendar_controls").fadeToggle("medium");
+        },
+        /**
+         * Переключение отображения элементов управления занесения времени
+         * задачи
+         * 
+         * @method calendarWholeDay
+         */
+        calendarWholeDay: function() {
+            if (this.$("#whole_day").is(":checked")) {
+                this.$("#start_time, #end_time").val("")
+                                                .hide("fast");
+            } else {
+                this.$("#start_time, #end_time").show("fast");
+            }
         }
     });
     /**
