@@ -23,6 +23,28 @@
                     <span id="task_name_err" class="error" style="display: none;">
                         Необходимо ввести наименование задачи
                     </span>
+                    
+                    <div id="task_calendar">
+                        <label id="add_to_calendar">Добавить в календарь</label>
+                        <div id="calendar_controls" style="display: none;">
+                            <div class="calendar-block">
+                                <input id="start_date" type="date" list value />
+                                <input id="start_time" type="time" />
+                                <span>&nbsp;&#8211;&nbsp;</span>
+                                <input id="end_date" type="date" list value />
+                                <input id="end_time" type="time" />
+                            </div>
+                            <label class="pure-checkbox">
+                                <input id="whole_day" type="checkbox" /> На весь день
+                            </label>
+                            <span id="invalid_format_err" class="error" style="display: none;">
+                                Неполностью введенны сроки задачи
+                            </span>
+                            <span id="date_wrong_order" class="error" style="display: none;">
+                                Дата и время начала не должны быть больше завершения
+                            </span>
+                        </div>
+                    </div>
             
                     <label for="description">Описание</label>
                     <textarea id="description" class="pure-input-1"><%= description %></textarea>

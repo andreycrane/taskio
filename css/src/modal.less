@@ -79,6 +79,30 @@
                 }
             }
             
+            .calendar-block {
+                display: inline-block;
+                clear: both;
+                width: 100%;
+                margin: 5px 0px;
+                
+                span {
+                    font-size: 16px;
+                    float: left;
+                }
+                
+                input {
+                    padding: 2px;
+                    border-radius: 0px;
+                    float: left;
+                    font-size: 16px;
+                    margin: 0 2px;
+                    
+                    &:first-child {
+                        margin-left: 0px;
+                    }
+                }
+            }
+            
             textarea {
                 resize: none;
                 border-radius: 0px;
@@ -90,6 +114,18 @@
                 margin-bottom: 3px;
                 margin-left: 1px;
                 margin-top: 5px;
+                
+                &#add_to_calendar {
+                    display: inline-block;
+                    
+                    cursor: pointer;
+                    border-bottom: 1px dashed darken(#7f8c8d, 20%);
+                    
+                    &:hover {
+                        color: #7f8c8d;
+                        border-bottom: 1px dashed #7f8c8d;
+                    }
+                }
             }
             
             input[type=text] {
