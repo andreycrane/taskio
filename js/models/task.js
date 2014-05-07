@@ -6,7 +6,9 @@ var TaskModel = (function(Backbone) {
             "project_id": null,
             "done": false,
             "name": "No name",
-            "description": "Description of task here..."
+            "description": "Description of task here...",
+            "start_datetime": 0,
+            "end_datetime": 0
         }
     });
     

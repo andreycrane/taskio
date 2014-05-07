@@ -36,9 +36,38 @@ var TasksView = (function(Backbone,
          * прослушивающего событие save данной модальной формы
          */
         modalShow: function(options) {
-            var selector = ["#task_project_id option[value='",
+            var start_date,
+                start_time,
+                end_date,
+                end_time,
+                d,
+                selector = ["#task_project_id option[value='",
                             options.task.get("project_id"),
                             "']"].join("");
+            
+            if (options.task.get("start_datetime")) {
+                d = new Date();
+                d.setTime(options.task.get("start_datetime"));
+                
+                start_date = this.getDateString(d);
+                console.log(start_date);
+                
+                start_time = this.getTimeString(d);
+            } else {
+                start_date = "";
+                start_time = "";
+            }
+            
+            if (options.task.get("end_datetime")) {
+                d = new Date();
+                d.setTime(options.task.get("end_datetime"));
+                
+                end_date = this.getDateString(d);
+                end_time = this.getTimeString(d);
+            } else {
+                end_date = "";
+                end_time = "";
+            }
             
             this.options = options;
             this.$el.append(this.template({
@@ -46,11 +75,20 @@ var TasksView = (function(Backbone,
                 projects: options.projects,
                 name: options.task.get("name"),
                 create: options.create,
+                start_date: start_date,
+                start_time: start_time,
+                end_date: end_date,
+                end_time: end_time,
+                whole_day: ((start_time === "00:00") & (end_time === "00:00")) ? "checked": "",
                 done: options.task.get("done") ? "checked": "",
                 description: options.task.get("description")
             }));
             this.$("#task_modal").focus();
             this.$(selector).attr("selected", "selected");
+            
+            if (start_date && end_date) {
+                this.$("#calendar_controls").toggle(true);
+            }
         },
         
         modalClose: function () { this.$("#task_modal").remove(); },
@@ -60,11 +98,22 @@ var TasksView = (function(Backbone,
         },
         
         modalSave: function() {
+            var start_datetime,
+                end_datetime;
+            
+            start_datetime = [this.$("#start_date").val(),
+                              this.$("#start_time").val()].join(" ");
+            
+            end_datetime = [this.$("#end_date").val(),
+                              this.$("#end_time").val()].join(" ");
+            
             this.options.task.set({
                 project_id: this.$("#task_project_id").val(),
                 name: this.$("#task_name").val(),
                 done: this.$("#done").is(":checked"),
-                description: this.$("#description").val()
+                description: this.$("#description").val(),
+                start_datetime: Date.parse(start_datetime) || 0,
+                end_datetime: Date.parse(end_datetime) || 0
             });
             this.modalClose();
             this.trigger("save", this.options);
@@ -152,6 +201,29 @@ var TasksView = (function(Backbone,
             } else {
                 this.$("#start_time, #end_time").show("fast");
             }
+        },
+        /**
+         * Возвращает строку отформатированной даты
+         *
+         * @method getDateString
+         * @param {Date} d объект
+         * @returns {String} строка даты
+         */
+        getDateString: function(d) {
+            return [d.getFullYear(),
+                    ("00" + (d.getMonth() + 1)).slice(-"00".length),
+                    ("00" + d.getDate()).slice(-"00".length)].join("-");
+        },
+        /**
+         * Возвращает строку отформатированного времени
+         *
+         * @method getTimeString
+         * @param {Date} d объект
+         * @returns {String} строка времени
+         */
+        getTimeString: function(d) {
+            return [("00" + d.getHours()).slice(-"00".length),
+                    ("00" + d.getMinutes()).slice(-"00".length)].join(":");
         }
     });
     /**
