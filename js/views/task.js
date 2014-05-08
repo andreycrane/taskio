@@ -38,6 +38,7 @@ var TaskView = (function(Backbone,
                 name: this.model.get("name"),
                 description: this.model.get("description"),
                 done: this.model.get("done") ? "checked": "",
+                created: this.createdString(),
                 project: this.project ? this.project.get("name") : "Вне проекта"
             }));
             
@@ -146,6 +147,27 @@ var TaskView = (function(Backbone,
                 "done": this.$("#t_done").is(":checked")
             });
             this.model.save();
+        },
+        /**
+         * Возвращает текстовое представление даты создания задачи
+         * 
+         * @method createdString
+         */
+        createdString: function() {
+            var d = new Date();
+            d.setTime(this.model.get("created"));
+            
+            return [
+                ("00" + d.getDate()).slice(-"00".length),
+                ".",
+                ("00" + (d.getMonth() + 1)).slice(-"00".length),
+                ".",
+                d.getFullYear(),
+                " ",
+                d.getHours(),
+                ":",
+                d.getMinutes()
+            ].join("");
         }
     });
 })(Backbone,

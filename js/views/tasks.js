@@ -50,8 +50,6 @@ var TasksView = (function(Backbone,
                 d.setTime(options.task.get("start_datetime"));
                 
                 start_date = this.getDateString(d);
-                console.log(start_date);
-                
                 start_time = this.getTimeString(d);
             } else {
                 start_date = "";
