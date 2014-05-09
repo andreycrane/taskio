@@ -86,6 +86,10 @@ var TasksView = (function(Backbone,
             
             if (start_date && end_date) {
                 this.$("#calendar_controls").toggle(true);
+                
+                if (((start_time === "00:00") & (end_time === "00:00"))) {
+                    this.$("#start_time, #end_time").toggle(false);
+                }
             }
         },
         
