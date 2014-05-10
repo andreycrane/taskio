@@ -14,7 +14,8 @@ var TaskView = (function(Backbone,
         events: {
             "click #delete_task": "deleteTask",
             "click #edit_task": "editTask",
-            "change #t_done": "changeDone"
+            "change #t_done": "changeDone",
+            "click #toggle_details": "toggleDetails"
         },
         
         initialize: function(options) {
@@ -34,11 +35,22 @@ var TaskView = (function(Backbone,
         },
         
         render: function() {
+            var taskDatetime = "";
+            
+            if (this.model.get("start_datetime")
+                && this.model.get("end_datetime")) {
+                taskDatetime = [
+                    this.datetimeString("start_datetime"),
+                    this.datetimeString("end_datetime")
+                ].join(" - ");
+            }
+            
             this.$el.append(this.task_template({
                 name: this.model.get("name"),
                 description: this.model.get("description"),
                 done: this.model.get("done") ? "checked": "",
-                created: this.createdString(),
+                created: this.datetimeString("created"),
+                taskDatetime: taskDatetime,
                 project: this.project ? this.project.get("name") : "Вне проекта"
             }));
             
@@ -149,13 +161,14 @@ var TaskView = (function(Backbone,
             this.model.save();
         },
         /**
-         * Возвращает текстовое представление даты создания задачи
+         * Возвращает текстовое представление даты и времени
          * 
-         * @method createdString
+         * @method datetimeString
+         * @param {String} field - поле модели из которого извлекается дата и время
          */
-        createdString: function() {
+        datetimeString: function(field) {
             var d = new Date();
-            d.setTime(this.model.get("created"));
+            d.setTime(this.model.get(field));
             
             return [
                 ("00" + d.getDate()).slice(-"00".length),
@@ -164,11 +177,17 @@ var TaskView = (function(Backbone,
                 ".",
                 d.getFullYear(),
                 " ",
-                d.getHours(),
+                ("00" + d.getHours()).slice(-"00".length),
                 ":",
-                d.getMinutes()
+                ("00" + d.getMinutes()).slice(-"00".length)
             ].join("");
-        }
+        },
+        /**
+         * Отображение или скрытие детальной информации о задаче
+         * 
+         * @method toggleDetails
+         */
+        toggleDetails: function() { this.$("#t_details").toggle(); }
     });
 })(Backbone,
    _,
