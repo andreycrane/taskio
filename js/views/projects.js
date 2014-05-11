@@ -37,7 +37,8 @@ var ProjectsView = (function(Backbone,
             
             this.$el.append(this.template({
                 legend: options.legend,
-                name: options.project.get("name")
+                name: options.project.get("name"),
+                color: options.project.get("color")
             }));
             
             this.$("#project_modal").focus();
@@ -55,7 +56,10 @@ var ProjectsView = (function(Backbone,
             if (_.isEmpty(val)) {
                 this.$("#project_name_err").fadeIn("slow");
             } else {
-                this.options.project.set("name", val);
+                this.options.project.set({
+                    name: val,
+                    color: this.$("#project_color").val()
+                });
                 this.trigger("save", this.options);
                 this.modalClose();
             }

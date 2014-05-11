@@ -3,7 +3,8 @@ var ProjectModel = (function(Backbone) {
     
     var ProjectModel = Backbone.Model.extend({
         defaults: {
-            "name": "Project noname"
+            "name": "Project noname",
+            "color": "#3498db"
         }
     });
     

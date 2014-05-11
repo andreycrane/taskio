@@ -113,7 +113,7 @@
                 color: darken(#7f8c8d, 20%);
                 margin-bottom: 3px;
                 margin-left: 1px;
-                margin-top: 5px;
+                margin-top: 6px;
                 
                 &#add_to_calendar {
                     display: inline-block;
@@ -134,6 +134,17 @@
                 
                 ::-webkit-input-placeholder {
                     color: #bdc3c7;
+                }
+            }
+            
+            input[type=color] {
+                border-radius: 0px;
+                width: 80px;
+                height: 30px;
+                padding: 2px;
+                
+                &::-webkit-color-swatch {
+                    border: none;
                 }
             }
             

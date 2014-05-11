@@ -28,7 +28,8 @@ var ProjectView = (function(Backbone,
         
         render: function() {
             this.$el.append(this.template({
-                name: this.project.get("name")
+                name: this.project.get("name"),
+                color: this.project.get("color")
             }));
             
             return this;
@@ -74,6 +75,9 @@ var ProjectView = (function(Backbone,
          */
         projectChange: function() {
             this.$("span.name").text(this.project.get("name"));
+            this.$("span.color").css({
+                "background-color": this.project.get("color")
+            });
         },
         /**
          * Обработчик удаления модели проекта
