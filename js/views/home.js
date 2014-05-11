@@ -42,6 +42,17 @@ var HomeView = (function(Backbone,
             this.$("#tasks_container").append(this.tasksView.render().$el);
             
             return this;
+        },
+        /**
+         * Перегрузка базового метода удаления вида из страницы
+         * 
+         * @method remove
+         */
+        remove: function() {
+            this.projectsView.remove();
+            this.tasksView.remove();
+            
+            return Backbone.View.prototype.remove.apply(this, arguments);
         }
     });
     
