@@ -349,6 +349,16 @@ var TasksView = (function(Backbone,
                 projects: this.projects,
                 create: false
             });
+        },
+        /**
+         * Перегрузка базового метода удаления вида из страницы
+         * 
+         * @method remove
+         */
+        remove: function(){
+            this.taskModal.undelegateEvents();
+            
+            return Backbone.View.prototype.remove.apply(this, arguments);
         }
     });
     
