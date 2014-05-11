@@ -34,6 +34,7 @@ var ApplicationView = (function(Backbone,
             
             this.currentView = new CalendarView();
             this.$('.content-container').append(this.currentView.render().el);
+            this.currentView.$("#calendar").fullCalendar('render');
         },
         
         report: function() {

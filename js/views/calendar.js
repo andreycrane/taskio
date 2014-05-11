@@ -8,6 +8,7 @@ var CalendarView = (function(Backbone, load_template) {
         
         render: function() {
             this.$el.append(this.template);
+            this.$("#calendar").fullCalendar({});
             
             return this;
         }
