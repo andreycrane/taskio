@@ -2,3 +2,5 @@ taskio.komodoproject
 .komodotools
 node_modules
 .idea
+css/dts/style.min.css
+css/style.min.css

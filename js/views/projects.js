@@ -268,6 +268,16 @@ var ProjectsView = (function(Backbone,
             } else {
                 this.$("#all_tasks").addClass("selected");
             }
+        },
+        /**
+         * Перегрузка метода удаления вида
+         * @method remove
+         */
+        remove: function() {
+            this.projectModal.undelegateEvents();
+            this.projectDelModal.undelegateEvents();
+            
+            return Backbone.View.prototype.remove.apply(this, arguments);
         }
     });
     

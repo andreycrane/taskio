@@ -5,8 +5,12 @@
 
 ###Скриншоты
 
-![Главное окно](https://farm6.staticflickr.com/5240/13909647510_22b2c14076_o.png)
+![Главное окно](https://farm3.staticflickr.com/2914/14170430625_ec223ab41a_o.png)
 
-![](https://farm3.staticflickr.com/2914/14072855466_fb73fd6266_o.png)
+![Развернутая информация](https://farm3.staticflickr.com/2901/14190532923_4313d658b2_o.png)
 
-![](https://farm6.staticflickr.com/5152/13909352480_6c407d19fd_o.png)
+![Поиск задачи по контексту](https://farm8.staticflickr.com/7330/13983768649_c88631f6df_o.png)
+
+![Доступные параметры задачи](https://farm8.staticflickr.com/7447/14147277986_66f6b573c6_o.png)
+
+![Параметры проекта](https://farm8.staticflickr.com/7419/13983802058_cf216e468f_o.png)
