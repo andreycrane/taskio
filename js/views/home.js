@@ -20,7 +20,7 @@ var HomeView = (function(Backbone,
             this.tasks.fetch({ async: false });
             // объект медиатора для взаимодейтсвия и прослушивания событий
             // между объектами видов
-            this.mediator = _.extend(Backbone.Events);
+            this.mediator = _.extend({}, Backbone.Events);
             
             this.projectsView = new ProjectsView({
                 projects: this.projects,

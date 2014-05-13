@@ -246,7 +246,8 @@ var TasksView = (function(Backbone,
          */
         events: {
             "click #new_task": "createTask",
-            "click #search_btn": "searchTask"
+            "click #search_btn": "searchTask",
+            "keypress #s_query": "searchKeyPress"
         },
         /**
          * Инициализция вида
@@ -329,6 +330,16 @@ var TasksView = (function(Backbone,
             }
             
             options.task.save();
+        },
+        /**
+         * Обработка нажатия клавиш в поле поиска
+         * @method searchKeyPress
+         */
+        searchKeyPress: function(event) {
+            // если нажали Enter запускаем поиск задачи по контексту
+            if (event.which === 13){
+                this.searchTask();
+            }
         },
         /**
          * Поиск задачи по тексту заданному в поиске
