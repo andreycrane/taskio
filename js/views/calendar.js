@@ -6,7 +6,8 @@
 var CalendarView = (function(Backbone,
                              load_template,
                              ProjectsCollection,
-                             TasksCollection) {
+                             TasksCollection,
+                             CalendarProjects) {
     "use strict";
     
     /**
@@ -30,6 +31,10 @@ var CalendarView = (function(Backbone,
             
             this.projects.fetch({ async: false });
             this.tasks.fetch({ async: false });
+            
+            this.calendarProjects = new CalendarProjects({
+                projects: this.projects
+            });
         },
         /**
          * Рендеринг вида
@@ -65,6 +70,8 @@ var CalendarView = (function(Backbone,
                 },
                  events: this.calendarEvents.bind(this)
             });
+            
+            this.$("#projects-container").append(this.calendarProjects.render().$el);
             
             return this;
         },
@@ -112,12 +119,17 @@ var CalendarView = (function(Backbone,
                 });
             });
             
-            console.log(events);
-            
             callback(events);
+        },
+        
+        remove: function() {
+            this.calendarProjects.remove();
+            
+            return Backbone.View.prototype.remove.call(this, arguments);
         }
     });
 } (Backbone,
    load_template,
    ProjectsCollection,
-   TasksCollection));
+   TasksCollection,
+   CalendarProjects));
