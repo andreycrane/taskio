@@ -142,7 +142,10 @@ var TaskView = (function(Backbone,
          */
         changeTask: function() {
             this.project = this.projects.get(this.model.get("project_id"));
-            this.$("#t_project").text(this.project.get("name"));
+            
+            if (this.project) {
+                this.$("#t_project").text(this.project.get("name"));
+            }
             
             this.$("#t_name").text(this.model.get("name"));
             this.$("#t_description").text(this.model.get("description"));
