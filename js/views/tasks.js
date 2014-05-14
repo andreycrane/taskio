@@ -329,7 +329,7 @@ var TasksView = (function(Backbone,
                 this.tasks.add(options.task);
             }
             
-            options.task.save();
+            options.task.save({ wait: true });
         },
         /**
          * Обработка нажатия клавиш в поле поиска
