@@ -85,7 +85,8 @@ var CalendarView = (function(Backbone,
          */
         calendarEvents: function(start, end, callback) {
             var calendarTasks,
-                events;
+                events,
+                that = this;
             
             events = [];
             calendarTasks = this.tasks.filter(function(task) {
@@ -110,12 +111,19 @@ var CalendarView = (function(Backbone,
             });
             
             calendarTasks.forEach(function(task) {
+                var project,
+                    backgroundColor;
+                
+                project = that.projects.get(task.get("project_id"));
+                backgroundColor = (project) ? project.get("color"): "";
+                
                 events.push({
                     id: task.id,
                     title: task.get("name"),
                     allDay: false,
                     start: new Date().setTime(task.get("start_datetime") / 1000),
-                    end: new Date().setTime(task.get("end_datetime") / 1000)
+                    end: new Date().setTime(task.get("end_datetime") / 1000),
+                    backgroundColor: backgroundColor
                 });
             });
             
