@@ -11,8 +11,14 @@ var CalendarProjects = (function(Backbone, load_template) {
     ProjectView = Backbone.View.extend({
         id: function() { return "project-view-" +  (projectViewsCnt +=1 ); },
         
+        events: {
+            "click": "projectSelected"
+        },
+        
         initialize: function(options) {
             options = options || {};
+            
+            this.mediator = options.mediator;
             this.project = options.project;
         },
         /**
@@ -21,14 +27,13 @@ var CalendarProjects = (function(Backbone, load_template) {
          * @method render
          */
         render: function() {
-            
-            this.$el.append([
-                "<li>",
-                this.project.get("name"),
-                "</li>"
-            ].join(""));
+            this.$el.append(this.project.get("name"));
             
             return this;
+        },
+        
+        projectSelected: function() {
+            this.mediator.trigger("proj_selected", { project: this.project });
         }
     });
     /**
@@ -40,6 +45,11 @@ var CalendarProjects = (function(Backbone, load_template) {
      */
     return Backbone.View.extend({
         id: "projects-view",
+        template: load_template("calendar_projects"),
+        
+        events: {
+            "click #all_projects": "allProjSelected"
+        },
         /**
          * Инициализация вида
          *
@@ -49,6 +59,7 @@ var CalendarProjects = (function(Backbone, load_template) {
         initialize: function(options) {
             options = options || {};
             
+            this.mediator = options.mediator;
             this.projects = options.projects;
         },
         /**
@@ -60,15 +71,22 @@ var CalendarProjects = (function(Backbone, load_template) {
         render: function() {
             var that = this;
             
+            this.$el.append(this.template);
+            
             this.projects.forEach(function(project) {
                 var projectView = new ProjectView({
-                    project: project
+                    project: project,
+                    mediator: that.mediator
                 });
                 
                 that.$el.append(projectView.render().$el);
             });
             
             return this;
+        },
+        
+        allProjSelected: function() {
+            this.mediator.trigger("proj_selected", { project: null });
         }
     });
 }(Backbone, load_template));

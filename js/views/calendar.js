@@ -4,6 +4,7 @@
  * @module calendar.js
  */
 var CalendarView = (function(Backbone,
+                             _,
                              load_template,
                              ProjectsCollection,
                              TasksCollection,
@@ -20,12 +21,14 @@ var CalendarView = (function(Backbone,
         id: "calendar-view",
         
         template: load_template("calendar_template"),
+        currentProject: null,
         /**
          * Инициализация вида
          * 
          * @method initialize
          */
         initialize: function() {
+            this.mediator = _.extend({}, Backbone.Events);
             this.projects = new ProjectsCollection();
             this.tasks = new TasksCollection();
             
@@ -33,8 +36,11 @@ var CalendarView = (function(Backbone,
             this.tasks.fetch({ async: false });
             
             this.calendarProjects = new CalendarProjects({
-                projects: this.projects
+                projects: this.projects,
+                mediator: this.mediator
             });
+            
+            this.listenTo(this.mediator, "proj_selected", this.proj_selected.bind(this));
         },
         /**
          * Рендеринг вида
@@ -95,6 +101,12 @@ var CalendarView = (function(Backbone,
                     start_i,
                     end_i;
                 
+                // филтрация по проекту
+                if (that.currentProject &&
+                    task.get("project_id") !== that.currentProject.id) {
+                    return false;
+                }
+                
                 start_i = start.getTime();
                 end_i = end.getTime();
                 
@@ -134,9 +146,19 @@ var CalendarView = (function(Backbone,
             this.calendarProjects.remove();
             
             return Backbone.View.prototype.remove.call(this, arguments);
+        },
+        /**
+         * Метод управдяющий отображением задач проектов на календаре
+         *
+         * @method proj_selected
+         */
+        proj_selected: function(options) {
+            this.currentProject = options.project;
+            this.$("#calendar-container").fullCalendar('refetchEvents');
         }
     });
 } (Backbone,
+   _,
    load_template,
    ProjectsCollection,
    TasksCollection,
