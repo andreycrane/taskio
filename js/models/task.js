@@ -9,7 +9,8 @@ var TaskModel = (function(Backbone) {
             "description": "Description of task here...",
             "start_datetime": 0,
             "end_datetime": 0,
-            "created": Date.now()
+            "created": Date.now(),
+            "done_at": null
         }
     });
     

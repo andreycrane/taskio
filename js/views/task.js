@@ -158,10 +158,13 @@ var TaskView = (function(Backbone,
          * @param {Object} event объект jQuery-события
          */
         changeDone: function() {
+            var checked = this.$("#t_done").is(":checked");
+            
             this.model.set({
-                "done": this.$("#t_done").is(":checked")
+                "done": checked,
+                "done_at": (checked) ? Date.now() : null
             });
-            this.model.save();
+            this.model.save({ wait: true });
         },
         /**
          * Возвращает текстовое представление даты и времени
