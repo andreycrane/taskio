@@ -135,7 +135,8 @@ var CalendarView = (function(Backbone,
                     allDay: false,
                     start: new Date().setTime(task.get("start_datetime") / 1000),
                     end: new Date().setTime(task.get("end_datetime") / 1000),
-                    backgroundColor: backgroundColor
+                    backgroundColor: backgroundColor,
+                    borderColor: backgroundColor
                 });
             });
             

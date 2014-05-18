@@ -20,6 +20,8 @@ var CalendarProjects = (function(Backbone, load_template) {
             
             this.mediator = options.mediator;
             this.project = options.project;
+            
+            this.listenTo(this.mediator, "proj_selected", this.proj_selected.bind(this));
         },
         /**
          * Рендеринг вида
@@ -34,6 +36,14 @@ var CalendarProjects = (function(Backbone, load_template) {
         
         projectSelected: function() {
             this.mediator.trigger("proj_selected", { project: this.project });
+        },
+        
+        proj_selected: function(options) {
+            if (options.project === this.project) {
+                this.$el.addClass("selected");
+            } else {
+                this.$el.removeClass("selected");
+            }
         }
     });
     /**
@@ -61,6 +71,8 @@ var CalendarProjects = (function(Backbone, load_template) {
             
             this.mediator = options.mediator;
             this.projects = options.projects;
+            
+            this.listenTo(this.mediator, "proj_selected", this.proj_selected.bind(this));
         },
         /**
          * Рендеринг вида
@@ -87,6 +99,14 @@ var CalendarProjects = (function(Backbone, load_template) {
         
         allProjSelected: function() {
             this.mediator.trigger("proj_selected", { project: null });
+        },
+        
+        proj_selected: function(options) {
+            if (options.project === null) {
+                this.$("#all_projects").addClass("selected");
+            } else {
+                this.$("#all_projects").removeClass("selected");
+            }
         }
     });
 }(Backbone, load_template));

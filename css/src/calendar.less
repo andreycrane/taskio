@@ -8,17 +8,42 @@
     #work-area {
         #projects-container {
             position: fixed;
-            top: 70px;
+            top: 50px;
             bottom: 0px;
             left: 0px;
             width: 300px;
+            border-right: 1px solid #ecf0f1;
+            
+            #projects-view div {
+                display: block;
+                float: left;
+                border-bottom: 1px solid #ecf0f1;
+                height: 16px;
+                padding: 12px 5px;
+                min-width: 290px !important;
+                vertical-align: middle;
+                -webkit-transition: background-color 0.8s ease;
+                font-size: 16px;
+                
+                &#all_projects {
+                    text-align: center;
+                }
+                
+                &:hover, &.selected {
+                    background-color: #ecf0f1;
+                }
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
         }
         
         #calendar-container {
             position: fixed;
             top: 70px !important;
             bottom: 0px;
-            left: 300px !important;
+            left: 310px !important;
             right: 10px;
         }
     }
