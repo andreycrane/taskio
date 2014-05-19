@@ -14,19 +14,26 @@
             width: 300px;
             border-right: 1px solid #ecf0f1;
             
-            #projects-view div {
+            #projects-view > div {
                 display: block;
                 float: left;
                 border-bottom: 1px solid #ecf0f1;
-                height: 16px;
-                padding: 12px 5px;
+                height: 30px;
+                padding: 5px;
                 min-width: 290px !important;
                 vertical-align: middle;
                 -webkit-transition: background-color 0.8s ease;
                 font-size: 16px;
                 
-                &#all_projects {
+                &#all_projects span {
                     text-align: center;
+                    display: table-cell;
+                    vertical-align: middle;
+                    background-color: #e74c3c;
+                    color: white;
+                    width: 290px;
+                    height: 30px;
+                    margin: 3px;
                 }
                 
                 &:hover, &.selected {
@@ -35,6 +42,13 @@
                 
                 &:last-child {
                     border-bottom: none;
+                }
+                
+                div {
+                    margin-right: 5px;
+                    width: 30px;
+                    height: 30px;
+                    float: left;
                 }
             }
         }

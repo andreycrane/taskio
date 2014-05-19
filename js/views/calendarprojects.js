@@ -29,7 +29,10 @@ var CalendarProjects = (function(Backbone, load_template) {
          * @method render
          */
         render: function() {
-            this.$el.append(this.project.get("name"));
+            this.$el.append(this.project.get("name"))
+                    .prepend("<div></div>")
+                    .children("div")
+                    .css("background-color", this.project.get("color"));
             
             return this;
         },
