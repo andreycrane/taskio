@@ -1,0 +1,78 @@
+#projects-view {
+    
+    button#create_project {
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 10px;
+        width: 280px;
+        height: 40px;
+        
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+    }
+    
+    #projects_list {
+        display: block;
+        position: fixed;
+        top: 110px;
+        bottom: 0px;
+        left: 0px;
+        width: 300px;
+        
+        padding: 0px;
+        margin: 0px;
+        border-top: 1px solid #ecf0f1;
+        
+        overflow-y: auto;
+        
+        li {
+            display: block;
+            border-bottom: 1px solid #ecf0f1;
+            height: 30px;
+            padding: 5px;
+            -webkit-transition: background-color 0.8s ease;
+            
+            
+            &:hover, &.selected {
+                background-color: #ecf0f1;
+            }
+            
+            &#all_tasks {
+                display: table-cell;
+                width: 300px;
+                text-align: center;
+                vertical-align: middle;
+            }
+            
+            .color {
+                display: block;
+                float: left;
+                width: 30px;
+                height: 30px;
+                margin-right: 3px;
+            }
+            
+            .del {
+                float: right;
+                width: 20px;
+                height: 20px;
+                background-image: url('../img/del.svg');
+                background-size: contain;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+            
+            .edit {
+                float: right;
+                width: 20px;
+                height: 20px;
+                background-size: contain;
+                background-image: url('../img/edit.svg');
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}

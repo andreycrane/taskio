@@ -1,0 +1,74 @@
+<div id="task_modal" class="pure-modal" tabindex="-1">
+    <div class="modal-container">
+        <div class="modal-header"><%= legend %></div>
+        <div class="modal-content">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <label id="task_project">Проект</label>
+                    <select id="task_project_id" class="pure-input-1">
+                        <option value="">Вне проекта</option>
+                        <% projects.forEach(function(project) { %>
+                        <option value="<%= project.get('id') %>">
+                            <%= project.get("name") %>
+                        </option>
+                        <% }); %>
+                    </select>
+                    
+                    <label for="task_name">Название</label>
+                    <input id="task_name"
+                           class="pure-input-1"
+                           type="text"
+                           value="<%= name %>"
+                           placeholder="Название">
+                    <span id="task_name_err" class="error" style="display: none;">
+                        Необходимо ввести наименование задачи
+                    </span>
+                    
+                    <div id="task_calendar">
+                        <label id="add_to_calendar">Добавить в календарь</label>
+                        <div id="calendar_controls" style="display: none;">
+                            <div class="calendar-block">
+                                <input id="start_date" type="date" value="<%= start_date %>" />
+                                <input id="start_time" type="time" value="<%= start_time %>" />
+                                <span>&nbsp;&#8211;&nbsp;</span>
+                                <input id="end_date" type="date" value="<%= end_date %>" />
+                                <input id="end_time" type="time" value="<%= end_time %>" />
+                            </div>
+                            <label class="pure-checkbox">
+                                <input id="whole_day" type="checkbox" <%= whole_day %> /> На весь день
+                            </label>
+                            <span id="invalid_format_err" class="error" style="display: none;">
+                                Неполностью введенны сроки задачи
+                            </span>
+                            <span id="date_wrong_order" class="error" style="display: none;">
+                                Дата и время начала не должны быть больше завершения
+                            </span>
+                        </div>
+                    </div>
+            
+                    <label for="description">Описание</label>
+                    <textarea id="description" class="pure-input-1"><%= description %></textarea>
+                    
+                    <% if (create !== true) { %>
+                    <label for="done" class="pure-checkbox">
+                        <input id="done" type="checkbox" <%= done %> > Выполнено
+                    </label>
+                    <% } %>
+                    <div class="btn-container">
+                        <button id="task_modal_save"
+                                type="button"
+                                class="modal-save">
+                            Сохранить
+                        </button>
+                        <button id="task_modal_close"
+                                type="button"
+                                class="modal-close">
+                            Отмена
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</div>

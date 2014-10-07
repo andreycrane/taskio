@@ -1,0 +1,64 @@
+#calendar-view {
+    position: fixed;
+    top: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    
+    #work-area {
+        #projects-container {
+            position: fixed;
+            top: 50px;
+            bottom: 0px;
+            left: 0px;
+            width: 300px;
+            border-right: 1px solid #ecf0f1;
+            
+            #projects-view > div {
+                display: block;
+                float: left;
+                border-bottom: 1px solid #ecf0f1;
+                height: 30px;
+                padding: 5px;
+                min-width: 290px !important;
+                vertical-align: middle;
+                -webkit-transition: background-color 0.8s ease;
+                font-size: 16px;
+                
+                &#all_projects span {
+                    text-align: center;
+                    display: table-cell;
+                    vertical-align: middle;
+                    background-color: #e74c3c;
+                    color: white;
+                    width: 290px;
+                    height: 30px;
+                    margin: 3px;
+                }
+                
+                &:hover, &.selected {
+                    background-color: #ecf0f1;
+                }
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+                
+                div {
+                    margin-right: 5px;
+                    width: 30px;
+                    height: 30px;
+                    float: left;
+                }
+            }
+        }
+        
+        #calendar-container {
+            position: fixed;
+            top: 70px !important;
+            bottom: 0px;
+            left: 310px !important;
+            right: 10px;
+        }
+    }
+}
