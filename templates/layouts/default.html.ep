@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title><%= $title %></title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="/css/style.css" rel="stylesheet" >
+        <%= content_for 'styles' %>
+        <%= content_for 'scripts' %>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Скрыть меню</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="/">Статистика</a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/rules/">Правила</a></li>
+                                <li><a href="/settings/">Настройки</a></li>
+                                <li><a href="/test/">Тест</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                              <li>
+                                <% if($self->is_user_authenticated()) { %>
+                                  <a href="/logout/">Выйти</a>
+                                <% } else { %>
+                                  <a href="/login/">Войти</a>
+                                <% } %>
+                              </li>
+                            </ul>
+                          </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Page content -->
+            <%= content %>
+        </div>
+    </body>
+</html>

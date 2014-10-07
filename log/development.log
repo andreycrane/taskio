@@ -153,3 +153,504 @@
 [Tue Oct  7 15:57:39 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
 [Tue Oct  7 15:57:39 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
 [Tue Oct  7 15:57:39 2014] [debug] 404 Not Found (0.006898s, 144.970/s).
+[Tue Oct  7 16:02:55 2014] [debug] GET "/projects".
+[Tue Oct  7 16:02:55 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:02:55 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:02:55 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:02:55 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:02:55 2014] [debug] 404 Not Found (0.005714s, 175.009/s).
+[Tue Oct  7 16:02:55 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:02:55 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:02:55 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:02:55 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:02:55 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:02:55 2014] [debug] 404 Not Found (0.005210s, 191.939/s).
+[Tue Oct  7 16:22:14 2014] [debug] GET "/projects".
+[Tue Oct  7 16:22:14 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:22:14 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:22:14 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:22:14 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:22:14 2014] [debug] 404 Not Found (0.004892s, 204.415/s).
+[Tue Oct  7 16:22:14 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:22:14 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:22:14 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:22:14 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:22:14 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:22:14 2014] [debug] 404 Not Found (0.006247s, 160.077/s).
+[Tue Oct  7 16:22:22 2014] [debug] GET "/".
+[Tue Oct  7 16:22:22 2014] [debug] Routing to controller "Taskio::Controller::Home" and action "index".
+[Tue Oct  7 16:22:22 2014] [debug] 302 Found (0.000507s, 1972.387/s).
+[Tue Oct  7 16:22:22 2014] [debug] GET "/projects".
+[Tue Oct  7 16:22:22 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:22:22 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:22:22 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:22:22 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:22:22 2014] [debug] 404 Not Found (0.004806s, 208.073/s).
+[Tue Oct  7 16:22:22 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:22:22 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:22:22 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:22:22 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:22:22 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:22:22 2014] [debug] 404 Not Found (0.005209s, 191.975/s).
+[Tue Oct  7 16:22:30 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:22:30 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:22:30 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:22:30 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:22:30 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:22:30 2014] [debug] 404 Not Found (0.006656s, 150.240/s).
+[Tue Oct  7 16:22:41 2014] [info] Listening at "http://*:3000".
+[Tue Oct  7 16:22:43 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:22:43 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:22:43 2014] [error] Can't locate Mojolicicous/Controller.pm in @INC (@INC contains: D:/sources/taskio/script/../lib C:/Perl/site/lib C:/Perl/lib .) at C:/Perl/site/lib/Mojo/Base.pm line 30.
+BEGIN failed--compilation aborted at D:/sources/taskio/script/../lib/Taskio/Controller/Tasks.pm line 2.
+Compilation failed in require at (eval 271) line 1.
+
+[Tue Oct  7 16:22:43 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:22:43 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:22:43 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:22:43 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:22:43 2014] [debug] 500 Internal Server Error (0.025538s, 39.157/s).
+[Tue Oct  7 16:23:10 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:23:10 2014] [error] Attempt to reload Taskio/Controller/Tasks.pm aborted.
+Compilation failed in require at (eval 274) line 1.
+
+[Tue Oct  7 16:23:10 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:23:10 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:23:10 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:23:10 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:23:10 2014] [debug] 500 Internal Server Error (0.006258s, 159.795/s).
+[Tue Oct  7 16:23:19 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:23:19 2014] [error] Attempt to reload Taskio/Controller/Tasks.pm aborted.
+Compilation failed in require at (eval 275) line 1.
+
+[Tue Oct  7 16:23:19 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:23:19 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:23:19 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:23:19 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:23:19 2014] [debug] 500 Internal Server Error (0.007915s, 126.342/s).
+[Tue Oct  7 16:24:19 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:24:19 2014] [error] Attempt to reload Taskio/Controller/Tasks.pm aborted.
+Compilation failed in require at (eval 276) line 1.
+
+[Tue Oct  7 16:24:19 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:24:19 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:24:19 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:24:19 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:24:19 2014] [debug] 500 Internal Server Error (0.006375s, 156.863/s).
+[Tue Oct  7 16:25:26 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:25:26 2014] [error] Attempt to reload Taskio/Controller/Tasks.pm aborted.
+Compilation failed in require at (eval 277) line 1.
+
+[Tue Oct  7 16:25:26 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:25:26 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:25:26 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:25:26 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:25:26 2014] [debug] 500 Internal Server Error (0.006355s, 157.356/s).
+[Tue Oct  7 16:26:08 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:26:08 2014] [error] Attempt to reload Taskio/Controller/Tasks.pm aborted.
+Compilation failed in require at (eval 278) line 1.
+
+[Tue Oct  7 16:26:08 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:26:08 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:26:08 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:26:08 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:26:08 2014] [debug] 500 Internal Server Error (0.006694s, 149.388/s).
+[Tue Oct  7 16:26:08 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:26:08 2014] [error] Attempt to reload Taskio/Controller/Tasks.pm aborted.
+Compilation failed in require at (eval 279) line 1.
+
+[Tue Oct  7 16:26:08 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:26:08 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:26:08 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:26:08 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:26:08 2014] [debug] 500 Internal Server Error (0.007621s, 131.216/s).
+[Tue Oct  7 16:26:09 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:26:09 2014] [error] Attempt to reload Taskio/Controller/Tasks.pm aborted.
+Compilation failed in require at (eval 280) line 1.
+
+[Tue Oct  7 16:26:09 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:26:09 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:26:09 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:26:09 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:26:09 2014] [debug] 500 Internal Server Error (0.008158s, 122.579/s).
+[Tue Oct  7 16:27:30 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:27:30 2014] [error] Attempt to reload Taskio/Controller/Tasks.pm aborted.
+Compilation failed in require at (eval 281) line 1.
+
+[Tue Oct  7 16:27:30 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:27:30 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:27:30 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:27:30 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:27:30 2014] [debug] 500 Internal Server Error (0.010027s, 99.731/s).
+[Tue Oct  7 16:29:51 2014] [info] Listening at "http://*:3000".
+[Tue Oct  7 16:29:55 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:29:55 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:29:55 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:29:55 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:29:55 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:29:55 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:29:55 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:29:55 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:29:55 2014] [debug] 500 Internal Server Error (0.048617s, 20.569/s).
+[Tue Oct  7 16:31:12 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:12 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:12 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:12 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:12 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:12 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:12 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:12 2014] [debug] 500 Internal Server Error (0.010123s, 98.785/s).
+[Tue Oct  7 16:31:13 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:13 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:13 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:13 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:13 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:13 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:13 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:13 2014] [debug] 500 Internal Server Error (0.013383s, 74.722/s).
+[Tue Oct  7 16:31:14 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:14 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:14 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:14 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:14 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:14 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:14 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:14 2014] [debug] 500 Internal Server Error (0.010626s, 94.109/s).
+[Tue Oct  7 16:31:14 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:14 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:14 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:14 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:14 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:14 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:14 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:14 2014] [debug] 500 Internal Server Error (0.009880s, 101.215/s).
+[Tue Oct  7 16:31:15 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:15 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:15 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:15 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:15 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:15 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:15 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:15 2014] [debug] 500 Internal Server Error (0.010095s, 99.059/s).
+[Tue Oct  7 16:31:48 2014] [info] Listening at "http://*:3000".
+[Tue Oct  7 16:31:51 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:31:51 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:51 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:51 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:51 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:51 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:51 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:51 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:51 2014] [debug] 500 Internal Server Error (0.037995s, 26.319/s).
+[Tue Oct  7 16:31:52 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:52 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:52 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:52 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:52 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:52 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:52 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:52 2014] [debug] 500 Internal Server Error (0.009938s, 100.624/s).
+[Tue Oct  7 16:31:53 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:53 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:53 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:53 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:53 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:53 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:53 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:53 2014] [debug] 500 Internal Server Error (0.010026s, 99.741/s).
+[Tue Oct  7 16:31:53 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:53 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:53 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:53 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:53 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:53 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:53 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:53 2014] [debug] 500 Internal Server Error (0.010836s, 92.285/s).
+[Tue Oct  7 16:31:56 2014] [debug] GET "/".
+[Tue Oct  7 16:31:56 2014] [debug] Routing to controller "Taskio::Controller::Home" and action "index".
+[Tue Oct  7 16:31:56 2014] [debug] 302 Found (0.001414s, 707.214/s).
+[Tue Oct  7 16:31:56 2014] [debug] GET "/projects".
+[Tue Oct  7 16:31:56 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:31:56 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:31:56 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:56 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:56 2014] [debug] 404 Not Found (0.019010s, 52.604/s).
+[Tue Oct  7 16:31:56 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:31:56 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:31:56 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:31:56 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:31:56 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:31:56 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:31:56 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:31:56 2014] [debug] 500 Internal Server Error (0.010998s, 90.926/s).
+[Tue Oct  7 16:32:40 2014] [info] Listening at "http://*:3000".
+[Tue Oct  7 16:32:43 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:32:43 2014] [debug] GET "/projects".
+[Tue Oct  7 16:32:43 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:32:43 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:32:43 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:32:43 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:32:43 2014] [debug] 404 Not Found (0.020157s, 49.611/s).
+[Tue Oct  7 16:32:43 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:32:43 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:32:43 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:32:43 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:32:43 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:32:43 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:32:43 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:32:43 2014] [debug] 500 Internal Server Error (0.025355s, 39.440/s).
+[Tue Oct  7 16:32:44 2014] [debug] GET "/projects".
+[Tue Oct  7 16:32:44 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:32:44 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:32:44 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:32:44 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:32:44 2014] [debug] 404 Not Found (0.005139s, 194.590/s).
+[Tue Oct  7 16:32:44 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:32:44 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:32:44 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:32:44 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:32:44 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:32:44 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:32:44 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:32:44 2014] [debug] 500 Internal Server Error (0.009542s, 104.800/s).
+[Tue Oct  7 16:32:51 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:32:51 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:32:51 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:32:51 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:32:51 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:32:51 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:32:51 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:32:51 2014] [debug] 500 Internal Server Error (0.012255s, 81.599/s).
+[Tue Oct  7 16:33:38 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:33:38 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:33:38 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:33:38 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:33:38 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:33:38 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:33:38 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:33:38 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:33:38 2014] [debug] 500 Internal Server Error (0.042933s, 23.292/s).
+[Tue Oct  7 16:33:39 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:33:39 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:33:39 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:33:39 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:33:39 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:33:39 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:33:39 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:33:39 2014] [debug] 500 Internal Server Error (0.011848s, 84.402/s).
+[Tue Oct  7 16:33:40 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:33:40 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:33:40 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:33:40 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:33:40 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:33:40 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:33:40 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:33:40 2014] [debug] 500 Internal Server Error (0.012222s, 81.820/s).
+[Tue Oct  7 16:33:41 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:33:41 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:33:41 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:33:41 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:33:41 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:33:41 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:33:41 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:33:41 2014] [debug] 500 Internal Server Error (0.011625s, 86.022/s).
+[Tue Oct  7 16:33:41 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:33:41 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:33:41 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:33:41 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:33:41 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:33:41 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:33:41 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:33:41 2014] [debug] 500 Internal Server Error (0.011453s, 87.313/s).
+[Tue Oct  7 16:34:24 2014] [info] Listening at "http://*:3000".
+[Tue Oct  7 16:34:31 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:34:31 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:34:32 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:34:32 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:34:32 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:34:32 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:34:32 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:34:32 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:34:32 2014] [debug] 500 Internal Server Error (0.043739s, 22.863/s).
+[Tue Oct  7 16:34:33 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:34:33 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:34:33 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:34:33 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:34:33 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:34:33 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:34:33 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:34:33 2014] [debug] 500 Internal Server Error (0.011677s, 85.638/s).
+[Tue Oct  7 16:37:02 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:37:02 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:37:02 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:37:02 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:37:02 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:37:02 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:37:02 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:37:02 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:37:02 2014] [debug] 500 Internal Server Error (0.045931s, 21.772/s).
+[Tue Oct  7 16:37:02 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:37:02 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:37:02 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:37:02 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:37:02 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:37:02 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:37:02 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:37:02 2014] [debug] 500 Internal Server Error (0.011684s, 85.587/s).
+[Tue Oct  7 16:37:24 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:37:24 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:37:24 2014] [error] Can't locate object method "dbh" via package "Taskio::Controller::Tasks" at C:/Perl/site/bin/../lib/Mojolicious.pm line 126.
+
+[Tue Oct  7 16:37:24 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:37:24 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:37:24 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:37:24 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:37:24 2014] [debug] 500 Internal Server Error (0.011040s, 90.580/s).
+[Tue Oct  7 16:37:25 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:37:26 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:37:26 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:37:26 2014] [error] Can't call method "selectall_arrayref" on an undefined value at D:/sources/taskio/script/../lib/Taskio/Controller/Tasks.pm line 6.
+
+[Tue Oct  7 16:37:26 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:37:26 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:37:26 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:37:26 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:37:26 2014] [debug] 500 Internal Server Error (0.025725s, 38.873/s).
+[Tue Oct  7 16:39:09 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:39:10 2014] [debug] GET "/projects".
+[Tue Oct  7 16:39:10 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:39:10 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:39:10 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:39:10 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:39:10 2014] [debug] 404 Not Found (0.021488s, 46.538/s).
+[Tue Oct  7 16:39:10 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:39:10 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:39:10 2014] [error] DBD::mysql::db selectall_arrayref failed: Table 'taskio.tasks' doesn't exist at D:/sources/taskio/script/../lib/Taskio/Controller/Tasks.pm line 6.
+
+[Tue Oct  7 16:39:10 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:39:10 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:39:10 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:39:10 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:39:10 2014] [debug] 500 Internal Server Error (0.217412s, 4.600/s).
+[Tue Oct  7 16:39:11 2014] [debug] GET "/projects".
+[Tue Oct  7 16:39:11 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:39:11 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:39:11 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:39:11 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:39:11 2014] [debug] 404 Not Found (0.006548s, 152.718/s).
+[Tue Oct  7 16:39:11 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:39:11 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:39:11 2014] [error] DBD::mysql::db selectall_arrayref failed: Table 'taskio.tasks' doesn't exist at D:/sources/taskio/script/../lib/Taskio/Controller/Tasks.pm line 6.
+
+[Tue Oct  7 16:39:11 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:39:11 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:39:11 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:39:11 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:39:11 2014] [debug] 500 Internal Server Error (0.013495s, 74.102/s).
+[Tue Oct  7 16:39:13 2014] [debug] GET "/projects".
+[Tue Oct  7 16:39:13 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:39:13 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:39:13 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:39:13 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:39:13 2014] [debug] 404 Not Found (0.005788s, 172.771/s).
+[Tue Oct  7 16:39:13 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:39:13 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:39:13 2014] [error] DBD::mysql::db selectall_arrayref failed: Table 'taskio.tasks' doesn't exist at D:/sources/taskio/script/../lib/Taskio/Controller/Tasks.pm line 6.
+
+[Tue Oct  7 16:39:13 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:39:13 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:39:13 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:39:13 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:39:13 2014] [debug] 500 Internal Server Error (0.019248s, 51.953/s).
+[Tue Oct  7 16:39:17 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:39:17 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:39:17 2014] [error] DBD::mysql::db selectall_arrayref failed: Table 'taskio.tasks' doesn't exist at D:/sources/taskio/script/../lib/Taskio/Controller/Tasks.pm line 6.
+
+[Tue Oct  7 16:39:17 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:39:17 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:39:17 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:39:17 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:39:17 2014] [debug] 500 Internal Server Error (0.011538s, 86.670/s).
+[Tue Oct  7 16:45:32 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:45:32 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:45:32 2014] [debug] 200 OK (0.000970s, 1030.928/s).
+[Tue Oct  7 16:45:33 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:45:33 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:45:33 2014] [debug] 200 OK (0.000782s, 1278.772/s).
+[Tue Oct  7 16:45:35 2014] [debug] GET "/projects".
+[Tue Oct  7 16:45:35 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 16:45:35 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 16:45:35 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:45:35 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:45:35 2014] [debug] 404 Not Found (0.006228s, 160.565/s).
+[Tue Oct  7 16:45:35 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:45:35 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:45:35 2014] [debug] 200 OK (0.000641s, 1560.062/s).
+[Tue Oct  7 16:50:58 2014] [debug] Your secret passphrase needs to be changed!!!
+[Tue Oct  7 16:50:58 2014] [debug] GET "/projects".
+[Tue Oct  7 16:50:58 2014] [error] Taskio/Controller/Projects.pm did not return a true value at (eval 270) line 1.
+
+[Tue Oct  7 16:50:58 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:50:58 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:50:58 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:50:58 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:50:58 2014] [debug] 500 Internal Server Error (0.021637s, 46.217/s).
+[Tue Oct  7 16:50:58 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:50:58 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:50:58 2014] [debug] 200 OK (0.020756s, 48.179/s).
+[Tue Oct  7 16:51:16 2014] [debug] GET "/projects".
+[Tue Oct  7 16:51:16 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 16:51:16 2014] [error] DBD::mysql::db selectall_arrayref failed: Table 'taskio.projects' doesn't exist at D:/sources/taskio/script/../lib/Taskio/Controller/Projects.pm line 6.
+
+[Tue Oct  7 16:51:16 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:51:16 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:51:16 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:51:16 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:51:16 2014] [debug] 500 Internal Server Error (0.012915s, 77.429/s).
+[Tue Oct  7 16:51:25 2014] [debug] GET "/projects".
+[Tue Oct  7 16:51:25 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 16:51:25 2014] [error] DBD::mysql::db selectall_arrayref failed: Table 'taskio.projects' doesn't exist at D:/sources/taskio/script/../lib/Taskio/Controller/Projects.pm line 6.
+
+[Tue Oct  7 16:51:25 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:51:25 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:51:25 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:51:25 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:51:25 2014] [debug] 500 Internal Server Error (0.009128s, 109.553/s).
+[Tue Oct  7 16:51:25 2014] [debug] GET "/projects".
+[Tue Oct  7 16:51:25 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 16:51:25 2014] [error] DBD::mysql::db selectall_arrayref failed: Table 'taskio.projects' doesn't exist at D:/sources/taskio/script/../lib/Taskio/Controller/Projects.pm line 6.
+
+[Tue Oct  7 16:51:25 2014] [debug] Template "exception.development.html.ep" not found.
+[Tue Oct  7 16:51:25 2014] [debug] Template "exception.html.ep" not found.
+[Tue Oct  7 16:51:25 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 16:51:25 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 16:51:25 2014] [debug] 500 Internal Server Error (0.008483s, 117.883/s).
+[Tue Oct  7 16:52:19 2014] [debug] GET "/tasks".
+[Tue Oct  7 16:52:19 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 16:52:19 2014] [debug] 200 OK (0.000750s, 1333.333/s).
+[Tue Oct  7 16:52:22 2014] [debug] GET "/projects".
+[Tue Oct  7 16:52:22 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 16:52:22 2014] [debug] 200 OK (0.001203s, 831.255/s).
