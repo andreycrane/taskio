@@ -1,20 +1,19 @@
-var load_template = (function(require) {
+var load_template = (function($) {
     'use strict';
     
-    var fs = require("fs"),
-        load_template;
-    
-    load_template = function(template_name) {
-        var filePath;
-        
-        filePath = [
-            "templates/",
+    var load_template = function(template_name) {
+        var templateUrl = [
+            "/templates/",
             template_name,
             ".html"
         ].join("");
-        
-        return fs.readFileSync(filePath, { encoding: "utf-8" });
+       
+        return $.ajax({
+            type: 'GET',
+            url: templateUrl,
+            async: false
+        }).responseText;
     };
     
     return load_template;
-} (require));
+} (jQuery));
