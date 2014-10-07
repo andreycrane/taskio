@@ -2,8 +2,8 @@ var ProjectsCollection = (function(Backbone, ProjectModel) {
     "use strict";
     
     var ProjectsCollection = Backbone.Collection.extend({
-        localStorage: new Backbone.LocalStorage("projects-backbone"),
-        model: ProjectModel
+        model: ProjectModel,
+        url: '/projects'
     });
     
     return ProjectsCollection;
