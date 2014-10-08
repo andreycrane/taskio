@@ -654,3 +654,78 @@ Compilation failed in require at (eval 281) line 1.
 [Tue Oct  7 16:52:22 2014] [debug] GET "/projects".
 [Tue Oct  7 16:52:22 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
 [Tue Oct  7 16:52:22 2014] [debug] 200 OK (0.001203s, 831.255/s).
+[Tue Oct  7 17:58:42 2014] [debug] GET "/".
+[Tue Oct  7 17:58:42 2014] [debug] Routing to controller "Taskio::Controller::Home" and action "index".
+[Tue Oct  7 17:58:42 2014] [debug] 302 Found (0.001321s, 757.002/s).
+[Tue Oct  7 17:58:42 2014] [debug] GET "/projects".
+[Tue Oct  7 17:58:42 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:58:42 2014] [debug] 200 OK (0.000751s, 1331.558/s).
+[Tue Oct  7 17:58:42 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:58:42 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:58:42 2014] [debug] 200 OK (0.000786s, 1272.265/s).
+[Tue Oct  7 17:59:07 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:07 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:07 2014] [debug] 200 OK (0.000637s, 1569.859/s).
+[Tue Oct  7 17:59:07 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:07 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:07 2014] [debug] 200 OK (0.000653s, 1531.394/s).
+[Tue Oct  7 17:59:09 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:09 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:09 2014] [debug] 200 OK (0.000893s, 1119.821/s).
+[Tue Oct  7 17:59:09 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:09 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:09 2014] [debug] 200 OK (0.000652s, 1533.742/s).
+[Tue Oct  7 17:59:15 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:15 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:15 2014] [debug] 200 OK (0.000589s, 1697.793/s).
+[Tue Oct  7 17:59:15 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:15 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:15 2014] [debug] 200 OK (0.000601s, 1663.894/s).
+[Tue Oct  7 17:59:27 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:27 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:27 2014] [debug] 200 OK (0.000665s, 1503.759/s).
+[Tue Oct  7 17:59:27 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:27 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:27 2014] [debug] 200 OK (0.000572s, 1748.252/s).
+[Tue Oct  7 17:59:29 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:29 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:29 2014] [debug] 200 OK (0.000690s, 1449.275/s).
+[Tue Oct  7 17:59:29 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:29 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:29 2014] [debug] 200 OK (0.000683s, 1464.129/s).
+[Tue Oct  7 17:59:31 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:31 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:31 2014] [debug] 200 OK (0.000708s, 1412.429/s).
+[Tue Oct  7 17:59:31 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:31 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:31 2014] [debug] 200 OK (0.000707s, 1414.427/s).
+[Tue Oct  7 17:59:32 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:32 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:32 2014] [debug] 200 OK (0.000698s, 1432.665/s).
+[Tue Oct  7 17:59:32 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:32 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:32 2014] [debug] 200 OK (0.000662s, 1510.574/s).
+[Tue Oct  7 17:59:33 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:33 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:33 2014] [debug] 200 OK (0.000635s, 1574.803/s).
+[Tue Oct  7 17:59:33 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:33 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:33 2014] [debug] 200 OK (0.000687s, 1455.604/s).
+[Tue Oct  7 17:59:33 2014] [debug] GET "/projects".
+[Tue Oct  7 17:59:33 2014] [debug] Routing to controller "Taskio::Controller::Projects" and action "all".
+[Tue Oct  7 17:59:33 2014] [debug] 200 OK (0.000688s, 1453.488/s).
+[Tue Oct  7 17:59:33 2014] [debug] GET "/tasks".
+[Tue Oct  7 17:59:33 2014] [debug] Routing to controller "Taskio::Controller::Tasks" and action "all".
+[Tue Oct  7 17:59:33 2014] [debug] 200 OK (0.000748s, 1336.898/s).
+[Tue Oct  7 18:00:06 2014] [debug] POST "/projects".
+[Tue Oct  7 18:00:06 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 18:00:06 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 18:00:06 2014] [debug] Rendering inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 18:00:06 2014] [debug] Rendering inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 18:00:06 2014] [debug] 404 Not Found (0.019946s, 50.135/s).
+[Tue Oct  7 18:00:16 2014] [debug] POST "/projects".
+[Tue Oct  7 18:00:16 2014] [debug] Template "not_found.development.html.ep" not found.
+[Tue Oct  7 18:00:16 2014] [debug] Template "not_found.html.ep" not found.
+[Tue Oct  7 18:00:16 2014] [debug] Rendering cached inline template "8122878e3bc1034543706fb58b4de464".
+[Tue Oct  7 18:00:16 2014] [debug] Rendering cached inline template "4fcf2af99f1803a7a26c2e9b04430f8c".
+[Tue Oct  7 18:00:16 2014] [debug] 404 Not Found (0.010122s, 98.795/s).
