@@ -1,8 +1,2 @@
 #!/bin/bash
-# The logic to start up your application should be put in this
-# script. The application will work only if it binds to
-# $OPENSHIFT_DIY_IP:8080
-# nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |& /usr/bin/logshifter -tag diy &
-
-!/bin/bash
-nohup ~/app-root/data/perl-5.16.3/bin/perl ~/app-root/data/perl-5.16.3/bin/morbo --listen 'http://$OPENSHIFT_INTERNAL_IP:$OPENSHIFT_INTERNAL_PORT' ~/app-root/runtime/repo/diy/script/taskio > /dev/null  2>&1 &
+nohup ~/app-root/data/perl-new/bin/perl ~/app-root/data/perl-new/bin/morbo --listen http://$OPENSHIFT_DIY_IP:$OPENSHIFT_DIY_PORT ~/app-root/runtime/repo/diy/script/taskio > /dev/null  2>&1 &
