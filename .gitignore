@@ -5,3 +5,4 @@ node_modules
 css/dts/style.min.css
 css/style.min.css
 *.swp
+*.log

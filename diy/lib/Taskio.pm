@@ -4,19 +4,17 @@ use DBI();
 use utf8;
 
 has dbh => sub {
-    my $db      = "taskio";     
+    my ($db, $host, $user, $pass) = ("taskio", undef, undef, undef); 
 
-    if (%ENV{OPENSHIFT_APP_NAME} eq 'taskio') {
-    
-        my $host    = %ENV{OPENSHIFT_MYSQL_DB_HOST};
-        my $user    = %ENV{OPENSHIFT_MYSQL_DB_USERNAME};
-        my $pass    = %ENV{OPENSHIFT_MYSQL_DB_PASSWORD};
+    if ($ENV{'OPENSHIFT_APP_NAME'} eq 'taskio') {
+        $host    = $ENV{'OPENSHIFT_MYSQL_DB_HOST'};
+        $user    = $ENV{'OPENSHIFT_MYSQL_DB_USERNAME'};
+        $pass    = $ENV{'OPENSHIFT_MYSQL_DB_PASSWORD'};
 
     } else {
-   
-        my $host    = "localhost:3306";
-        my $user    = "root";
-        my $pass    = "coffee";
+        $host    = "localhost:3306";
+        $user    = "root";
+        $pass    = "coffee";
     }
 
     $::dbh ||= DBI->connect("DBI:mysql:database=$db;host=$host", $user, $pass, { RaiseError => 1 });
