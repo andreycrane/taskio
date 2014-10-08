@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+mysql taskio < $OPENSHIFT_REPO_DIR/diy/tables.sql
