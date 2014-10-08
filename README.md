@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #Task.IO
 
 Небольшой таск-менеджер, написанный на JavaScript с целью закрепить
@@ -17,8 +16,3 @@
 ![Параметры проекта](https://farm8.staticflickr.com/7419/13983802058_cf216e468f_o.png)
 
 ![Календарь](https://farm6.staticflickr.com/5313/14223515155_622ba67344_o.png)
-=======
-The OpenShift `diy` cartridge documentation can be found at:
-
-http://openshift.github.io/documentation/oo_cartridge_guide.html#diy
->>>>>>> 8413524c81530e4e83d26b637776d432f046e6a5
