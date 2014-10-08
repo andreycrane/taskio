@@ -2,4 +2,6 @@
 # The logic to start up your application should be put in this
 # script. The application will work only if it binds to
 # $OPENSHIFT_DIY_IP:8080
-nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |& /usr/bin/logshifter -tag diy &
+# nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |& /usr/bin/logshifter -tag diy &
+
+nohup $OPENSHIFT_DATA_DIR/perl-new/bin/morbo --listen $OPENSHIFT_DIY_IP:$OPENSHIFT_DIY_PORT $OPENSHIFT_REPO_DIR/diy/script/taskio && echo $! > $OPENSHIFT_DATA_DIR/server.pid
