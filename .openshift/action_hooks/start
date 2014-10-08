@@ -4,4 +4,5 @@
 # $OPENSHIFT_DIY_IP:8080
 # nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |& /usr/bin/logshifter -tag diy &
 
-nohup $OPENSHIFT_DATA_DIR/perl-new/bin/morbo --listen $OPENSHIFT_DIY_IP:$OPENSHIFT_DIY_PORT $OPENSHIFT_REPO_DIR/diy/script/taskio && echo $! > $OPENSHIFT_DATA_DIR/server.pid
+!/bin/bash
+nohup ~/app-root/data/perl-5.16.3/bin/perl ~/app-root/data/perl-5.16.3/bin/morbo --listen 'http://$OPENSHIFT_INTERNAL_IP:$OPENSHIFT_INTERNAL_PORT' ~/app-root/runtime/repo/diy/script/taskio > /dev/null  2>&1 &
