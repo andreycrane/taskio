@@ -17,5 +17,5 @@ CREATE TABLE IF NOT EXISTS tasks (
     end_datetime DATETIME,
     created TIMESTAMP NOT NULL DEFAULT NOW(),
     done_at DATETIME,
-    FOREIGN KEY project_id REFERENCES projects (id)
+    FOREIGN KEY (project_id) REFERENCES project (id)
 );
