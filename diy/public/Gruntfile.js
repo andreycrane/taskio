@@ -43,6 +43,16 @@ module.exports = function(grunt) {
             styles: {
                 src: 'css/dst/style.min.css',
                 dest: 'css/style.min.css'
+            },
+
+            index: {
+                src: 'index.html',
+                dest: '../templates/home/index.html.ep'
+            },
+            
+            build: {
+                src: 'index_build.html',
+                dest: '../templates/home/index.html.ep'
             }
         },
                 
@@ -54,6 +64,11 @@ module.exports = function(grunt) {
             styles: {
                 files: ['css/src/*.less'],
                 tasks: ['less:style', 'copy:styles']
+            },
+            
+            html: {
+                files: ['index.html'],
+                tasks: ['copy:index']
             }
         }
     });
@@ -104,5 +119,6 @@ module.exports = function(grunt) {
         grunt.config.set("concat_files", filesArray);
         grunt.task.run("concat:dist");
         grunt.task.run("uglify:build");
+        grunt.task.run("copy:build");
     });
 };

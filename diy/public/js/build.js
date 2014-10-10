@@ -1981,18 +1981,13 @@ var ApplicationView = (function(Backbone,
     
     var ApplicationView = Backbone.View.extend({
         currentView: null,
-        
+         
         events: {
-            "click #menu": "showMenu",
             "click #home": "home",
             "click #calendar": "calendar",
             "click #report": "report",
             "click #settings": "settings"
         },
-        
-        initialize: function() {},
-        
-        showMenu: function() { this.$el.addClass("animate modalview"); },
         
         home: function() {
             this.$el.removeClass("animate modalview");
@@ -2034,6 +2029,7 @@ var ApplicationView = (function(Backbone,
    CalendarView,
    ReportView,
    SettingsView));
+
 /*--------------*/
 $(function (){
     var app;

@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Login page</h1>
+        <form method="post" action="/login">
+            <input type="text" name="username" placeholder="Логин" />
+            <input type="password" name="password" placeholder="Пароль" />
+            <input type="submit" value="Войти" />
+        </form>
+    </body>
+</html>
