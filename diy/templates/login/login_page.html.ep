@@ -41,6 +41,8 @@
                 height: 30px;
                 border: none;
                 margin: 0 auto;
+                background-color: #e74c3c;
+                color: white; 
             }
         </style>
     </head>

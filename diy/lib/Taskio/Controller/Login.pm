@@ -9,8 +9,8 @@ sub login {
     my $username = $self->param('username');
     my $password = $self->param('password');
     
-    $self->redirect_to('index') and return if($self->authenticate($username, $password));
-    $self->render(template => 'login_page');
+    $self->redirect_to('index') and return 1 if($self->authenticate($username, $password));
+    $self->render(template => 'login/login_page');
 }
 
 sub user_logout {
