@@ -1,11 +1,11 @@
 <!doctype html>
-<html>
+<html manifest="cache.manifest">
     <head>
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/pure-nr-min.css" />
         <link rel="stylesheet" href="css/fullcalendar.css" />
         <link rel="stylesheet" href="css/style.min.css" />
-        <script src="js\build.min.js"></script>
+        <script src="js/build.min.js"></script>
     </head>
     <body>
         <div class="navbar">

@@ -1,0 +1,28 @@
+CACHE MANIFEST
+# Task.IO cache v.1413138940470
+CACHE:
+index.html
+css/style.min.css
+css/normalize.css
+css/pure-nr-min.css
+css/fullcalendar.css
+img/edit.svg
+img/del.svg
+js/build.min.js
+templates/calendar_projects.html
+templates/calendar_template.html
+templates/delete_project_modal.html
+templates/home_template.html
+templates/login_template.html
+templates/project.html
+templates/project_modal.html
+templates/projects.html
+templates/report_template.html
+templates/settings_template.html
+templates/task.html
+templates/task_modal.html
+templates/tasks.html
+fonts/BEBAS.ttf
+NETWORK:
+/tasks
+/projects
