@@ -1,7 +1,7 @@
 var ApplicationView = (function(Backbone,
                                 HomeView,
                                 CalendarView,
-                                ReportView,
+                                MigrationView,
                                 SettingsView) {
     'use strict';
     
@@ -11,7 +11,7 @@ var ApplicationView = (function(Backbone,
         events: {
             "click #home": "home",
             "click #calendar": "calendar",
-            "click #report": "report",
+            "click #migration": "migration",
             "click #settings": "settings"
         },
         
@@ -32,11 +32,11 @@ var ApplicationView = (function(Backbone,
             this.currentView.$("#calendar-container").fullCalendar('render');
         },
         
-        report: function() {
+        migration: function() {
             this.$el.removeClass("animate modalview");
             this.currentView && this.currentView.remove();
             
-            this.currentView = new ReportView();
+            this.currentView = new MigrationView();
             this.$('.content-container').append(this.currentView.render().el);
         },
         
@@ -53,5 +53,5 @@ var ApplicationView = (function(Backbone,
 } (Backbone,
    HomeView,
    CalendarView,
-   ReportView,
+   MigartionView,
    SettingsView));

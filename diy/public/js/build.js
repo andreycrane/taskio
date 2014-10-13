@@ -1940,22 +1940,22 @@ var SettingsView = (function(Backbone,
    load_template));
 /*--------------*/
 /**
- * Модуль вида report.js
+ * Модуль вида migration.js
  *
- * @module report.js
+ * @module migration.js
  */
-var ReportView = (function(Backbone,
+var MigartionView = (function(Backbone,
                            load_template) {
     /**
-     * Вид страницы с отчетами
+     * Вид страницы с Миграционной картой
      * 
-     * @class ReportView
+     * @class MigrationView
      * @constructor
      * @extends Backbone.View
      */
     return Backbone.View.extend({
         id: "projects-view",
-        template: load_template("report_template"),
+        template: load_template("migration_template"),
         /**
          * Рендеринг вида
          * 
@@ -1971,11 +1971,12 @@ var ReportView = (function(Backbone,
     
 }(Backbone,
   load_template));
+
 /*--------------*/
 var ApplicationView = (function(Backbone,
                                 HomeView,
                                 CalendarView,
-                                ReportView,
+                                MigrationView,
                                 SettingsView) {
     'use strict';
     
@@ -1985,7 +1986,7 @@ var ApplicationView = (function(Backbone,
         events: {
             "click #home": "home",
             "click #calendar": "calendar",
-            "click #report": "report",
+            "click #migration": "migraton",
             "click #settings": "settings"
         },
         
@@ -2006,11 +2007,11 @@ var ApplicationView = (function(Backbone,
             this.currentView.$("#calendar-container").fullCalendar('render');
         },
         
-        report: function() {
+        migration: function() {
             this.$el.removeClass("animate modalview");
             this.currentView && this.currentView.remove();
             
-            this.currentView = new ReportView();
+            this.currentView = new MigrationView();
             this.$('.content-container').append(this.currentView.render().el);
         },
         
@@ -2027,7 +2028,7 @@ var ApplicationView = (function(Backbone,
 } (Backbone,
    HomeView,
    CalendarView,
-   ReportView,
+   MigartionView,
    SettingsView));
 
 /*--------------*/
