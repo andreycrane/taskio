@@ -1,20 +1,20 @@
 /**
- * Модуль вида report.js
+ * Модуль вида migration.js
  *
- * @module report.js
+ * @module migration.js
  */
-var ReportView = (function(Backbone,
+var MigartionView = (function(Backbone,
                            load_template) {
     /**
-     * Вид страницы с отчетами
+     * Вид страницы с Миграционной картой
      * 
-     * @class ReportView
+     * @class MigrationView
      * @constructor
      * @extends Backbone.View
      */
     return Backbone.View.extend({
         id: "projects-view",
-        template: load_template("report_template"),
+        template: load_template("migration_template"),
         /**
          * Рендеринг вида
          * 
