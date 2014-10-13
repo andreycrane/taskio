@@ -1,3 +1,5 @@
+@import "lib.less";
+
 @brd-radius: 3px;
 
 .pure-modal {
@@ -7,7 +9,7 @@
     bottom: 0px;
     right: 0px;
     background-color: rgba(44, 62, 80, 0.9);
-    z-index: 99999999;
+    z-index: 999;
     
     &.hide {
         display: none;
@@ -17,7 +19,7 @@
         display: block;
         top: 45%;
         left: 50%;
-        -webkit-transform: translate(-50%, -50%);
+        .transform-translate(-50%, -50%);
         width: 600px !important;
         margin: 0 auto;
         position: fixed;
@@ -99,6 +101,14 @@
                     
                     &:first-child {
                         margin-left: 0px;
+                    }
+                    
+                    &.date {
+                        width: 100px;
+                    }
+
+                    &.time {
+                        width: 50px;
                     }
                 }
             }

@@ -41,6 +41,8 @@ var TasksView = (function(Backbone,
                 end_date,
                 end_time,
                 d,
+                dateoptions,
+                timeoptions,
                 selector = ["#task_project_id option[value='",
                             options.task.get("project_id"),
                             "']"].join("");
@@ -81,6 +83,8 @@ var TasksView = (function(Backbone,
                 done: options.task.get("done") ? "checked": "",
                 description: options.task.get("description")
             }));
+
+
             this.$("#task_modal").focus();
             this.$(selector).attr("selected", "selected");
             
@@ -91,9 +95,31 @@ var TasksView = (function(Backbone,
                     this.$("#start_time, #end_time").toggle(false);
                 }
             }
+
+            dateoptions = { 
+                lang: "ru", 
+                className: "datetimepicker",
+                timepicker: false,
+                format: "d-m-Y" 
+            };
+            
+            timeoptions = { 
+                lang: "ru", 
+                className: "datetimepicker",
+                datepicker: false,
+                format: "G:i"
+            };
+
+            this.$("#start_date.date").datetimepicker(dateoptions);
+            this.$("#end_date.date").datetimepicker(dateoptions);
+            this.$("#start_time.time").datetimepicker(timeoptions);
+            this.$("#end_time.time").datetimepicker(timeoptions);
         },
         
-        modalClose: function () { this.$("#task_modal").remove(); },
+        modalClose: function () { 
+            this.$(".date, .time").datetimepicker('destroy');    
+            this.$("#task_modal").remove(); 
+        },
         
         modalEscape: function(event) {
             if (event.keyCode === 27) { this.modalClose(); }
@@ -105,10 +131,10 @@ var TasksView = (function(Backbone,
             
             start_datetime = [this.$("#start_date").val(),
                               this.$("#start_time").val()].join(" ");
-            
+ 
             end_datetime = [this.$("#end_date").val(),
                               this.$("#end_time").val()].join(" ");
-            
+
             this.options.task.set({
                 project_id: this.$("#task_project_id").val(),
                 name: this.$("#task_name").val(),

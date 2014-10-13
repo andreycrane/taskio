@@ -28,11 +28,11 @@
                         <label id="add_to_calendar">Добавить в календарь</label>
                         <div id="calendar_controls" style="display: none;">
                             <div class="calendar-block">
-                                <input id="start_date" type="date" value="<%= start_date %>" />
-                                <input id="start_time" type="time" value="<%= start_time %>" />
+                                <input id="start_date" class="date" type="text" value="<%= start_date %>" />
+                                <input id="start_time" class="time" type="text" value="<%= start_time %>" />
                                 <span>&nbsp;&#8211;&nbsp;</span>
-                                <input id="end_date" type="date" value="<%= end_date %>" />
-                                <input id="end_time" type="time" value="<%= end_time %>" />
+                                <input id="end_date" class="date" type="text" value="<%= end_date %>" />
+                                <input id="end_time" class="time" type="text" value="<%= end_time %>" />
                             </div>
                             <label class="pure-checkbox">
                                 <input id="whole_day" type="checkbox" <%= whole_day %> /> На весь день

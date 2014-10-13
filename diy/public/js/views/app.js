@@ -14,7 +14,7 @@ var ApplicationView = (function(Backbone,
             "click #migration": "migration",
             "click #settings": "settings"
         },
-        
+
         home: function() {
             this.$el.removeClass("animate modalview");
             this.currentView && this.currentView.remove();

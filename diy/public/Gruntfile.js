@@ -138,6 +138,7 @@ module.exports = function(grunt) {
                 "css/style.min.css",
                 "css/normalize.css",
                 "css/pure-nr-min.css",
+                "css/jquery.datatimepicker.css",
                 "css/fullcalendar.css",
                 // Images
                 "img/edit.svg",

@@ -1,38 +1,41 @@
-h1 {
-    font-family: 'bebas'; 
-    font-size: 72px;
-    color: #2c3e50;
-    text-align: center; 
+.login-container {
+
+    h1 {
+        font-family: 'bebas'; 
+        font-size: 72px;
+        color: #2c3e50;
+        text-align: center; 
+    }
+
+    form {
+        display: block;
+        margin: 0 auto;
+        width: 400px;
+    }
+
+
+    form input[type="text"], 
+    form input[type="password"] {
+        display: block;
+        margin: 10px auto;
+        width: 390px;
+        height: 30px;
+        transition: box-shadow 0.3s, border 0.3s;
+    };
+
+    form input[type="text"]:focus, 
+    form input[type="password"]:focus {
+        box-shadow: 0 0 5px 1px #969696;
+    }
+
+    form input[type="submit"] {
+        display: block;
+        width: 100px;
+        height: 30px;
+        border: none;
+        margin: 0 auto;
+        background-color: #e74c3c;
+        color: white; 
+    }
+
 }
-
-form {
-    display: block;
-    margin: 0 auto;
-    width: 400px;
-}
-
-
-form input[type="text"], 
-form input[type="password"] {
-    display: block;
-    margin: 10px auto;
-    width: 390px;
-    height: 30px;
-    transition: box-shadow 0.3s, border 0.3s;
-};
-
-form input[type="text"]:focus, 
-form input[type="password"]:focus {
-    box-shadow: 0 0 5px 1px #969696;
-}
-
-form input[type="submit"] {
-    display: block;
-    width: 100px;
-    height: 30px;
-    border: none;
-    margin: 0 auto;
-    background-color: #e74c3c;
-    color: white; 
-}
-
