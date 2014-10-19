@@ -1,11 +1,11 @@
 CACHE MANIFEST
-# Task.IO cache v.1413197224032
+# Task.IO cache v.1413743721103
 CACHE:
 index.html
 css/style.min.css
 css/normalize.css
 css/pure-nr-min.css
-css/jquery.datatimepicker.css
+css/jquery.datetimepicker.css
 css/fullcalendar.css
 img/edit.svg
 img/del.svg
@@ -18,7 +18,7 @@ templates/login_template.html
 templates/project.html
 templates/project_modal.html
 templates/projects.html
-templates/report_template.html
+templates/migration_template.html
 templates/settings_template.html
 templates/task.html
 templates/task_modal.html

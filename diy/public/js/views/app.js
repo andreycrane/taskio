@@ -53,5 +53,5 @@ var ApplicationView = (function(Backbone,
 } (Backbone,
    HomeView,
    CalendarView,
-   MigartionView,
+   MigrationView,
    SettingsView));

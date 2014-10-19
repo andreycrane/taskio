@@ -138,7 +138,7 @@ module.exports = function(grunt) {
                 "css/style.min.css",
                 "css/normalize.css",
                 "css/pure-nr-min.css",
-                "css/jquery.datatimepicker.css",
+                "css/jquery.datetimepicker.css",
                 "css/fullcalendar.css",
                 // Images
                 "img/edit.svg",
@@ -154,7 +154,7 @@ module.exports = function(grunt) {
                 "templates/project.html",
                 "templates/project_modal.html",
                 "templates/projects.html",
-                "templates/report_template.html",
+                "templates/migration_template.html",
                 "templates/settings_template.html",
                 "templates/task.html",
                 "templates/task_modal.html",

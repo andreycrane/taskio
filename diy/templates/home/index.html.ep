@@ -4,15 +4,18 @@
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/pure-nr-min.css" />
         <link rel="stylesheet" href="css/fullcalendar.css" />
+        <link rel="stylesheet" href="css/jquery.datetimepicker.css" />
         <link rel="stylesheet" href="css/style.min.css" />
         <!-- begin -->
         <script src="js/lib/jquery.min.js"></script>
-        <script src="js/lib/jquery-ui.custom.min.js"></script>
+        <script src="js/lib/jquery.datetimepicker.js"></script>
         <script src="js/lib/fullcalendar.min.js"></script>
         <script src="js/lib/underscore.min.js"></script>
         <script src="js/lib/json2.js"></script>
         <script src="js/lib/backbone.min.js"></script>
+        <script src="js/lib/raphael-min.js"></script>
         <script src="js/lib/load_template.js"></script>
+        <script src="js/lib/migration.js"></script>
         <script src="js/models/task.js"></script>
         <script src="js/models/project.js"></script>
         <script src="js/collections/tasks.js"></script>
