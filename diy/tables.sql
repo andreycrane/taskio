@@ -26,3 +26,5 @@ CREATE TABLE IF NOT EXISTS tasks (
     description TEXT,
     FOREIGN KEY (project_id) REFERENCES projects(id)
 );
+
+INSERT INTO users (username, password) VALUES ('root', PASSWORD('coffee'));
