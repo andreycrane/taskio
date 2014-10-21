@@ -19,7 +19,13 @@ has dbh => sub {
     }
 
     $::dbh ||= DBI->connect("DBI:mysql:database=$db;host=$host", 
-                $user, $pass, { RaiseError => 1, mysql_enable_utf8 => 1 });
+                $user, 
+                $pass, 
+                { 
+                    RaiseError => 1, 
+                    mysql_enable_utf8 => 1,
+                    mysql_auto_reconnect => 1
+                });
 };
 
 
