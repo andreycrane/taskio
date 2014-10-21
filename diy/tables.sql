@@ -28,3 +28,4 @@ CREATE TABLE IF NOT EXISTS tasks (
 );
 
 INSERT INTO users (username, password) VALUES ('root', PASSWORD('coffee'));
+INSERT INTO projects (name, color) VALUES ('default', 'blue');

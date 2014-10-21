@@ -1,5 +1,6 @@
 var TaskView = (function(Backbone,
                          _,
+                         moment,
                          ProjectsCollection,
                          load_template) {
     "use strict";
@@ -148,6 +149,11 @@ var TaskView = (function(Backbone,
             }
             
             this.$("#t_name").text(this.model.get("name"));
+            this.$("#t_datetime").text([
+                moment(this.model.get("start_datetime")).format("DD-MM-YYYY HH:mm"),
+                " - ",
+                moment(this.model.get("end_datetime")).format("DD-MM-YYYY HH:mm")
+            ].join(""));
             this.$("#t_description").text(this.model.get("description"));
             this.$("#t_done").attr("checked", this.model.get("done"));
         },
@@ -197,5 +203,6 @@ var TaskView = (function(Backbone,
     });
 })(Backbone,
    _,
+   moment,
    ProjectsCollection,
    load_template);

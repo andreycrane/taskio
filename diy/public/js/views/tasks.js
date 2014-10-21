@@ -4,6 +4,7 @@
  * @module tasks.js
  */
 var TasksView = (function(Backbone,
+                          moment,
                           load_template,
                           TaskModel,
                           TaskView) {
@@ -51,8 +52,8 @@ var TasksView = (function(Backbone,
                 d = new Date();
                 d.setTime(options.task.get("start_datetime"));
                 
-                start_date = this.getDateString(d);
-                start_time = this.getTimeString(d);
+                start_date = moment(d).format("DD-MM-YYYY");
+                start_time = moment(d).format("HH:mm");
             } else {
                 start_date = "";
                 start_time = "";
@@ -62,8 +63,8 @@ var TasksView = (function(Backbone,
                 d = new Date();
                 d.setTime(options.task.get("end_datetime"));
                 
-                end_date = this.getDateString(d);
-                end_time = this.getTimeString(d);
+                end_date = moment(d).format("DD-MM-YYYY");
+                end_time = moment(d).format("HH:mm");
             } else {
                 end_date = "";
                 end_time = "";
@@ -107,7 +108,7 @@ var TasksView = (function(Backbone,
                 lang: "ru", 
                 className: "datetimepicker",
                 datepicker: false,
-                format: "G:i"
+                format: "H:i"
             };
 
             this.$("#start_date.date").datetimepicker(dateoptions);
@@ -140,8 +141,8 @@ var TasksView = (function(Backbone,
                 name: this.$("#task_name").val(),
                 done: this.$("#done").is(":checked"),
                 description: this.$("#description").val(),
-                start_datetime: Date.parse(start_datetime) || 0,
-                end_datetime: Date.parse(end_datetime) || 0
+                start_datetime: moment(start_datetime, "DD-MM-YYYY HH:mm")._d.getTime() || 0,
+                end_datetime: moment(end_datetime, "DD-MM-YYYY HH:mm")._d.getTime() || 0
             });
             this.modalClose();
             this.trigger("save", this.options);
@@ -400,6 +401,7 @@ var TasksView = (function(Backbone,
     });
     
 }(Backbone,
+  moment,
   load_template,
   TaskModel,
   TaskView));

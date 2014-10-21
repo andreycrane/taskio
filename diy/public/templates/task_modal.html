@@ -6,7 +6,7 @@
                 <fieldset>
                     <label id="task_project">Проект</label>
                     <select id="task_project_id" class="pure-input-1">
-                        <option value="">Вне проекта</option>
+                        <option value="1">Вне проекта</option>
                         <% projects.forEach(function(project) { %>
                         <option value="<%= project.get('id') %>">
                             <%= project.get("name") %>
