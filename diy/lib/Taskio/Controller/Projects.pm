@@ -3,7 +3,7 @@ use Mojo::Base 'Mojolicious::Controller';
 
 sub all {
     my $self = shift;
-    my $projects = $self->db->selectall_arrayref('select * from projects');
+    my $projects = $self->db->selectall_arrayref('select * from projects where id != 1');
 
     $projects = [map { id => $_->[0], name => $_->[1], color => $_->[2] }, @$projects];
     $self->render(json => $projects);
