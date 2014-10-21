@@ -1,5 +1,6 @@
 var HomeView = (function(Backbone,
                          _,
+                         Mousetrap,
                          ProjectsCollection,
                          ProjectView,
                          TasksCollection,
@@ -21,7 +22,10 @@ var HomeView = (function(Backbone,
             // объект медиатора для взаимодейтсвия и прослушивания событий
             // между объектами видов
             this.mediator = _.extend({}, Backbone.Events);
-            
+
+            // сбрасываем предыдущие клавиатурные комбинации (сокращения)
+            Mousetrap.reset();
+
             this.projectsView = new ProjectsView({
                 projects: this.projects,
                 tasks: this.tasks,
@@ -59,6 +63,7 @@ var HomeView = (function(Backbone,
     return HomeView;
 }(Backbone,
   _,
+  Mousetrap,
   ProjectsCollection,
   ProjectView,
   TasksCollection,

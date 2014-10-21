@@ -6,6 +6,7 @@
 
 var ProjectsView = (function(Backbone,
                              _,
+                             Mousetrap,
                              load_template,
                              ProjectView,
                              ProjectModel) {
@@ -149,6 +150,8 @@ var ProjectsView = (function(Backbone,
             this.listenTo(this.mediator, "deleteProject", this.deleteModal);
             // событие выбора проекта в качестве фильтра
             this.listenTo(this.mediator, "prj_selected", this.prj_selected);
+            // привязка событий клавиатуры
+            Mousetrap.bind('ctrl+alt+p', this.create_project.bind(this));            
         },
         /**
          * Метод рендеринга вида
@@ -283,6 +286,7 @@ var ProjectsView = (function(Backbone,
     
 }(Backbone,
   _,
+  Mousetrap,
   load_template,
   ProjectView,
   ProjectModel));

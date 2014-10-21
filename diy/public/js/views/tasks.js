@@ -5,6 +5,7 @@
  */
 var TasksView = (function(Backbone,
                           moment,
+                          Mousetrap,
                           load_template,
                           TaskModel,
                           TaskView) {
@@ -298,6 +299,8 @@ var TasksView = (function(Backbone,
             this.listenTo(this.tasks, "add", this.addTask.bind(this));
             // прослушивание события редактирования задачи
             this.listenTo(this.mediator, "editTask", this.editTask.bind(this));
+            // прослушивание событий клавиатуры
+            Mousetrap.bind('ctrl+alt+space', this.createTask.bind(this));
         },
         /**
          * Рендеринг вида списка задач
@@ -402,6 +405,7 @@ var TasksView = (function(Backbone,
     
 }(Backbone,
   moment,
+  Mousetrap,
   load_template,
   TaskModel,
   TaskView));
